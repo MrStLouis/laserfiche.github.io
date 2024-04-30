@@ -29,7 +29,7 @@ A single-page app (SPA) is a web application that runs entirely in the browser. 
 
 ## Generating a PKCE Code Verifier and Code Challenge
 
-1. SPAs run entirely in the browser and do not have the ability to store server-side secrets. They can be susceptible to authorization code interception attacks when using the authorization code flow, which is why we require SPAs to also use the PKCE extension with the regular authorization code flow. To use the PKCE extension, _code_verifier_ and _code_challenge_ values need to be generated as specified in [RFC 7636 section 4.1](https://datatracker.ietf.org/doc/html/rfc7636#section-4.1). See the following C# sample code for generating the _code_verifier_ and _code_challenge_.
+SPAs run entirely in the browser and do not have the ability to store server-side secrets. They can be susceptible to authorization code interception attacks when using the authorization code flow, which is why we require SPAs to also use the PKCE extension with the regular authorization code flow. To use the PKCE extension, _code_verifier_ and _code_challenge_ values need to be generated as specified in [RFC 7636 section 4.1](https://datatracker.ietf.org/doc/html/rfc7636#section-4.1). See the following C# sample code for generating the _code_verifier_ and _code_challenge_.
 
    - ```js
        var rng = RandomNumberGenerator.Create();
