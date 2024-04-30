@@ -40,12 +40,14 @@ For Self-Hosted Laserfiche systems, learn how to [use the Swagger UI Sandbox](..
 
 1. Register your app on the Developer Console. For more information, follow the first section in the guide on [Creating an OAuth Web App](../guide_oauth-webapp) or [Creating an OAuth Single-Page App](../guide_oauth-spa) depending on your app type.
 1. On the App Configuration page, add the following URI to the list of redirect URIs. The redirect URI depends on where your Laserfiche Cloud resides.
-  - | Data Center | Repository API redirect URI | Table API URI |
-  | --- | --- | --- |
-  | United States | https://api.laserfiche.com/repository/swagger/oauth2-redirect.html | https://api.laserfiche.com/odata4/swagger/oauth2-redirect.html |
-  | Canada | https://api.laserfiche.ca/repository/swagger/oauth2-redirect.html | https://api.laserfiche.ca/odata4/swagger/oauth2-redirect.html |
-  | Europe | https://api.laserfiche.ca/repository/swagger/oauth2-redirect.html | https://api.eu.laserfiche.com/odata4/swagger/oauth2-redirect.html |
-- ![](./assets/images/api-swagger-oauth-web-app-01.png)
+
+    | Data Center | Repository API redirect URI | Table API URI |
+    | --- | --- | --- |
+    | United States | https://api.laserfiche.com/repository/swagger/oauth2-redirect.html | https://api.laserfiche.com/odata4/swagger/oauth2-redirect.html |
+    | Canada | https://api.laserfiche.ca/repository/swagger/oauth2-redirect.html | https://api.laserfiche.ca/odata4/swagger/oauth2-redirect.html |
+    | Europe | https://api.laserfiche.ca/repository/swagger/oauth2-redirect.html | https://api.eu.laserfiche.com/odata4/swagger/oauth2-redirect.html |
+    
+    ![](./assets/images/api-swagger-oauth-web-app-01.png)
 1. On the Swagger UI Sandbox, scroll to the top of the page, (switch to the **v1** or later definition for Repository API), and click **Authorize** to display the following dialog box. ![](./assets/images/api-swagger-oauth-web-app-02.png)
 1. In the dialog box, find the **OAuth2 Authorization Code Flow** Authorization option. Within **client_id**, enter the Client ID found on the Developer Console App Configuration page. For Web Apps, also enter the Client Secret within the **client_secret** section of the dialog box. For Single-Page Apps, the client secret should be blank.
 1. Click **Authorize**.
