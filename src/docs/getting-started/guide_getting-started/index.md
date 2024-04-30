@@ -54,4 +54,4 @@ Leverage the Laserfiche API to build integrations with other enterprise platform
 ## Next Steps:
 
 - Check out our [Guides](../../guides/) page for more walk-throughs and tutorials about the Laserfiche API.
-- If you're new to RESTful web APIs, check out our [overview](../../overview/guide_overview-of-the-laserfiche-api/) to learn what the API looks like and how it works.
+- If you're new to RESTful web APIs, check out our [overview](../../api/guide_overview-of-the-laserfiche-api/) to learn what the API looks like and how it works.

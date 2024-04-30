@@ -1,11 +1,13 @@
 ---
 layout: default
-title: Overview of the Laserfiche API
-nav_order: 2
+title: API
+nav_order: 4
 redirect_from:
   - guides/guide_overview-of-the-laserfiche-api.html
   - guide_overview-of-the-laserfiche-api.html
-parent: Overview
+  - api/index.html
+  - api.html
+has_children: true
 ---
 
 <!--© 2024 Laserfiche.
