@@ -11,4 +11,4 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 # Documents and Folders
 
-For information about repository security, see [doc.laserfiche.com](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#Security.htm)
+The guides in this section explore how to leverage the Laserfiche API for common document and folder actions in your repository.
