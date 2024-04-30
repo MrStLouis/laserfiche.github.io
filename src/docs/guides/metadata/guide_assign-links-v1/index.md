@@ -21,7 +21,7 @@ For example, you might connect documents of different types that are related in 
 
 **Request Overview**
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*entryID*/links
 ```
 
@@ -29,8 +29,10 @@ The following sample request links an email message to another document that is 
 
 The entry ID in the request URI will be the email. The request body contains a list of links that will be created to the source entry. The example request body contains one link to the document with entry ID 15 that we want to specify as the attachment. The Message and Attachment document relationship types are created by default in a repository and is represented with the linktypeID of 1.
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/10/links
+```
+```json
 [
   {
     "targetId": 15,
@@ -43,8 +45,10 @@ Note that this call will overwrite any existing links on the source entry. If yo
 
 The response will contain the list of all links assigned to the source entry. Each link will contain properties on the source and target entries, as well as a URI to get the source entry and target entry. These URIs can be used by making a GET request to the URI specified by the sourceLink or targetLink properties.
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "value": [
     {

@@ -27,7 +27,7 @@ Laserfiche API V2 provides two types of APIs for retrieving a document from the 
 Retrieve a document from the repository in a synchronous style, using the following POST request.
 **Request Overview**
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v2/Repositories/*{repositoryId}*/Entries/*{entryId}*/Export?pageRange=*{pageRange}*
 ```
 
@@ -59,8 +59,10 @@ The **request body** has the following structure:
 - **textOptions:** the options applied when exporting as **Text**, i.e. when **part=Text**. - **includeRedactions:** indicates if redactions are included. The default value is true. - **redactionCharacter:** the character that replaces the original character in a redacted text. The value must be a string of length 1 and must not be a whitespace character. The default value is "X".
   If export is successful, the API will return a 200 HTTP response status code with a _download link_ in the response. Make another HTTP call to that download link to return the exported file.
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Repositories('r-abc123')/entries(2161949)/Export",
   "value": "{downloadLink}"
@@ -72,15 +74,17 @@ HTTP 200 OK
 Retrieve a document from the repository in an asynchronous style, using te following POST request.
 **Request Overview**
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v2/Repositories/*{repositoryId}*/Entries/*{entryId}*/ExportAsync?pageRange=*{pageRange}*
 ```
 
 The query parameters and the request body structure is the same as the **Simple Export** API.
 If export is started successfully, the API will return a 202 HTTP response status code with a _task ID_.
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Repositories('r-abc123')/entries(2161949)/ExportAsync",
   "@odata.type": "#Laserfiche.Repository.StartTaskResponse",
@@ -90,12 +94,14 @@ HTTP 202 Accepted
 
 The _task ID_ can be used to check the status of the export task and retrieve its result.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Tasks?taskIds={taskId}
 ```
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Tasks",
   "value": [

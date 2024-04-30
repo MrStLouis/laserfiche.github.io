@@ -32,7 +32,7 @@ The Laserfiche Cloud APIs follows the [OAuth 2.0 authorization model](../../api/
 
 1. Create an HTTP action in your low-code solution to obtain an Access Token given a long-lasting `{authorizationKey}`obtained during the application registration.
 
-```xml
+```
 POST https://signin.laserfiche.com/oauth/token
 Authorization: Bearer {authorizationKey}
 Content-Type: application/x-www-form-urlencoded
@@ -45,8 +45,10 @@ grant_type=client_credentials&scope=repository.ReadWrite
 
 1. A successful response will contain the Access Token needed to make Laserfiche API requests.
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "access_token": "...",
   "token_type": "bearer",
@@ -87,7 +89,7 @@ See the [this guide](../../guides/documents-and-folders/guide_importing-document
     - As an example, the second part assigns the `Email` template and the `Sender` and `Recipients` fields to the imported file. The metadata may need to be updated if the template and field definitions do not exist in the Laserfiche repository. - `{documentName}` is the name of the document when imported to the Laserfiche repository. - `autoRename` indicates if the imported entry should be automatically renamed if an entry already exists with the given name in the folder. The default value is false.
       Copy and paste the following request body.
 
-  ```xml
+  ```json
   {
     "$content-type": "multipart/form-data",
     "$multipart": [
@@ -131,8 +133,10 @@ See the [this guide](../../guides/documents-and-folders/guide_importing-document
 
 A successful call will return a 201 HTTP response status code with the details of the created entry in the response body. In addition, the URI for the created entry is returned in the _location_ HTTP response header. In the following example response, _{documentName}_ has been set to _"LFAPI created document"_.
 
-```xml
+```
 HTTP 201 Created
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Entries/Laserfiche.Repository.Document/$entity",
   "@odata.type": "#Laserfiche.Repository.Document",

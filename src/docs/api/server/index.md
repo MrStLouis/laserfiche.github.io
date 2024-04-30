@@ -72,7 +72,7 @@ To verify the Laserfiche API Server is running, navigate to the API Server Swagg
 {: .note }
 **Note:** When authenticating with a Windows domain account, the API expects the username to be in either UPN format (**username@domain**) or down-level logon name format (**domain\username**).
 
-```xml
+```
 POST https://{APIServerHostName}/LFRepositoryAPI/v1/Repositories/{repositoryId}/Token
 Content-Type: application/x-www-form-urlencoded
 
@@ -84,8 +84,10 @@ grant_type=password&username={username}&password={password}
 
 If successful, the API will return a 200 HTTP response status code and the response body will contain an access token.
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "access_token": "...",
   "expires_in": 900,
@@ -95,7 +97,7 @@ HTTP 200 OK
 
 Include the access token in the Bearer Authorization header when accessing the Laserfiche API like so:
 
-```xml
+```
 GET https://{APIServerHostName}/LFRepositoryAPI/v1/Repositories/{repositoryId}/Entries/{entryId}
 Authorization: Bearer {accessToken}
 ```

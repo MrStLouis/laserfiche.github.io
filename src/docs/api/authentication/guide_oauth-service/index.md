@@ -93,7 +93,7 @@ The JWT will also need to be signed by the **access key**. See the links below f
 
 1.  The service application can then issue a POST request with the generated HMAC client credential JWT or Authorization Key in the Bearer Authorization header to request an access token.
 
-    - ```xml
+    - ```
         POST https://signin.laserfiche.com/oauth/token HTTP/1.1
         Authorization: Bearer jwt-containing-client_id-and-client_secret-here
         Content-Type: application/x-www-form-urlencoded
@@ -108,10 +108,11 @@ The JWT will also need to be signed by the **access key**. See the links below f
 
     - On success, the OAuth service will return an access token in the response.
 
-      - ```xml
+      - ```
           HTTP/1.1 200 OK
           Content-Type: application/json; charset=UTF-8
-
+        ```
+        ```json
           {
           "access_token": "some_access_token_value",
           "token_type": "bearer",
@@ -125,10 +126,11 @@ The JWT will also need to be signed by the **access key**. See the links below f
 
     - On failure, the OAuth service will return an error response.
 
-      - ```xml
+      - ```
           HTTP/1.1 401 Unauthorized
           Content-Type: application/json; charset=UTF-8
-
+        ```
+        ```json
           {
           "error": "invalid_client",
           "error_description": "The client_id is invalid or authentication failed.",
@@ -156,7 +158,7 @@ Error types include:
 
   Use the **Repositories** route to get a list of repositories current user have access to.
 
-  ```xml
+  ```
   GET https://api.laserfiche.com/repository/v1/Repositories
   Authorization: Bearer some_access_token_value
   ```
@@ -166,7 +168,7 @@ Error types include:
 
   You can make repository API calls like so:
 
-  ```xml
+  ```
   GET https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Entries/{entryId}
   Authorization: Bearer some_access_token_value
   ```
@@ -180,7 +182,7 @@ Error types include:
 
   You can make Table API calls like so:
 
-  ```xml
+  ```
   GET https://api.laserfiche.com/odata4/table
   Authorization: Basic base64_encoded_username:password
   ```

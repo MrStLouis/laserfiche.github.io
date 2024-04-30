@@ -17,14 +17,16 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 Folders are the basis for organizing all of the content in your repository. You can create folders with the Laserfiche API by using the following POST API.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/repoId/Entries/entryId/Laserfiche.Repository.Folder/children
 ```
 
 In the example scenario below, we will create a folder for a new employee named "Jane Smith" in our HR department.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/r-abcd1234/Entries/908/Laserfiche.Repository.Folder/children
+```
+```json
 {
 "name" : "Jane Smith",
 "entryType" : "Folder"
@@ -50,8 +52,10 @@ POST https://api.laserfiche.com/repository/v1/Repositories/r-abcd1234/Entries/90
 
 If successful, the API will return a 201 HTTP response status code indicating that the new folder resource was created. The response body will include all of the properties of the newly created folder.
 
-```xml
+```
 HTTP 201 Created
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v1/$metadata#Collection(Laserfiche.Repository.Entry)",
   "@odata.type": "#Laserfiche.Repository.Folder",

@@ -19,14 +19,16 @@ Dynamic field values are [metadata types](https://doc.laserfiche.com/laserfiche.
 
 **Request Overview**
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*entryId*/fields/GetDynamicFieldLogicValue
 ```
 
 The example retrieves the child field values that correlate to the given parent field value **California** of field **US States** on template ID **1234**.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345/fields/GetDynamicFieldLogicValue
+```
+```json
 {
   "templateId": 123,
   "fieldValues" : {
@@ -37,8 +39,10 @@ POST https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/1234
 
 This call will return a response containing a dictionary of field names and their lists of corresponding child field values.
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "US States": [
     "California",

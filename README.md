@@ -9,7 +9,7 @@ Laserfiche developer portal: https://developer.laserfiche.com
 - Follow the instructions [here](https://jekyllrb.com/docs/) to install jekyll and bundler.
 - Check installations and versions:
 
-  ```
+  ```sh
   gem --version
   bundle --version
   jekyll --version
@@ -77,7 +77,7 @@ parent: Laserfiche Title
 
 To check if there are any dead relative links in the project, navigate to src, and run
 
-```
+```sh
 jekyll build
 bundle exec rake
 ```

@@ -28,8 +28,10 @@ A search operation follows the [long operation](../../../getting-started/guide_l
 
 In the following example, we'll search a specific folder, _Meeting Minutes_, for document text, fields, annotation text, and entry names for the phrase _Windham Ave_:
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Searches
+```
+```json
 {
     "searchCommand":"{LF:Basic~=\"Windham Ave\",option=\"DFANLT\"}&amp;({LF:LOOKIN=\"\\Meeting Minutes\"})"
 }
@@ -40,8 +42,10 @@ POST https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Searches
 
 This call will return a token that represents the running search operation.
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
     "token": "12345678-abcd-efgh-ijkl-123456789012"
 }
@@ -49,14 +53,16 @@ HTTP 202 Accepted
 
 Check the status of the search operation by calling GET https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Searches/*searchToken* with the returned token:
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Searches/12345678-abcd-efgh-ijkl-123456789012
 ```
 
 If the search is still running, the response will return the status of the operation, for example:
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
     "operationToken": "12345678-abcd-efgh-ijkl-123456789012",
     "operationType":"Search",
@@ -68,14 +74,16 @@ HTTP 202 Accepted
 
 When the search is complete, retrieve the results set by calling GET https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Searches/*searchToken*/Results with the token:
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Searches/12345678-abcd-efgh-ijkl-123456789012/Results
 ```
 
 The response will contain a list of entries representing the results of your search query, for example:
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
     "value":[
       {
@@ -120,14 +128,16 @@ HTTP 200 Ok
 
 To get the text context hits for a document in the search results, we can call GET https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Searches/*searchToken*/Results/*rowNumber*/ContextHits with the appropriate row number of the search result.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Searches/12345678-abcd-efgh-ijkl-123456789012/Results/18/ContextHits
 ```
 
 The call will return all of the context hits with "Windham Ave" that was found in the specified document.
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "value": [
     {

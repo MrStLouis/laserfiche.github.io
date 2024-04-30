@@ -21,14 +21,16 @@ A field contains a piece of information about a document, such as an author name
 
 **Request Overview**
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*entryId*/template
 ```
 
 The example request assigns the **Email** template to the entry with entry ID **12345**. It also assigns values to the **Sender**, **Recipients**, and **Subject** fields in the template. In this example, **Recipients** is a multi-value field and we can assign more than one value.
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345/template
+```
+```json
 {
   "templateName":"Email",
   "fields":{
@@ -66,8 +68,10 @@ PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345
 
 A successful return response will include the updated entry with assigned template information.
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "id":12345,
   "name": "Sample Document Name",
@@ -107,8 +111,10 @@ HTTP 200 Ok
 
 In the next example, we will assign a template that has a multi-value field group. The example request assigns the **Shopping List** template to the entry with entry ID **12345**. This template has two fields, **Item** and **Price**, and both fields are in a multi-value field group. In this example, we will assign the template and create two field groups. Matching position values are used to determine which values are grouped together in the field group.
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345/template
+```
+```json
 {
   "templateName": "Shopping List",
   "fields": {
@@ -142,8 +148,10 @@ PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345
 
 A successful return response will include the updated entry with assigned template information.
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "id":12345,
   "name": "Sample Document Name",
