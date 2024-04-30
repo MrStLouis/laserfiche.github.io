@@ -10,3 +10,5 @@ parent: Guides
 See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license information.-->
 
 # Metadata
+
+Our guides walk you through how to perform common tasks against the valuable metadata in your repository using the Laserfiche API.

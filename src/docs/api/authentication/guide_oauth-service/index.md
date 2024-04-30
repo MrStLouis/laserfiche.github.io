@@ -42,7 +42,7 @@ Create an OAuth Service App when you want to write a service application that ma
      - Once generated, continue to the [OAuth Client Credentials Grant Flow](#oauth-client-credentials-grant-flow) section to generate an HMAC client credential and request an access token.
    - Option 2: Using a long-lasting **Authorization Key** to obtain an API Access Token.
 
-     - Choose this option if the service app does not have the capabilities of generating an HMAC client credential. This option is intended for [low-code tools](../../../getting-started/guide_low-code-tools-v2/) that require a static secret to connect to Laserfiche APIs.
+     - Choose this option if the service app does not have the capabilities of generating an HMAC client credential. This option is intended for [low-code tools](../../../getting-started/guide_low-code-tools/) that require a static secret to connect to Laserfiche APIs.
      - Creating an **Authorization Key** requires entering a valid service principal key for the selected service principal
 
        {: .note }
@@ -68,7 +68,7 @@ Create an OAuth Service App when you want to write a service application that ma
 
 ## OAuth Client Credentials Grant Flow
 
-**Note:** This section can be skipped if you are using Basic Authentication with a **username and password**. You can proceed directly to the [Use the credentials to Laserfiche APIs](#use-the-credentials-to-access-the-laserfiche-api) section.
+**Note:** This section can be skipped if you are using Basic Authentication with a **username and password**. You can proceed directly to the [Use the credentials to Laserfiche APIs](#use-the-credentials-to-access-laserfiche-apis) section.
 
 ### Generate an HMAC Client Credential
 
