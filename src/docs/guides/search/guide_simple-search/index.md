@@ -20,8 +20,10 @@ The simple search API can run a search query in the repository and return the re
 
 In the following simple search, we want to find entries with a specific value in the _Purchase Order ID_ field.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/SimpleSearches
+```
+```json
 {
 "searchCommand":"{[]:[Purchase Order ID]=\"789\"}"
 }
@@ -29,7 +31,7 @@ POST https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Simple
 
 The response will include a listing of the entries that matched the search query. See the following sample response for the above search:
 
-```xml
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Collection(Laserfiche.Repository.Entry)",
   "value":[

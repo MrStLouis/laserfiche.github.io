@@ -20,7 +20,7 @@ Folders are the basis for organizing all of the content in your repository. In t
 
 ## Retrieving a List of Documents
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Entries/{entryId}/Folder/Children
 ```
 
@@ -30,7 +30,7 @@ For this example scenario, we will retrieve the list of entries from a folder ca
 
 There is no request body for this API since it is a GET request.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Entries/54/Folder/Children
 ```
 
@@ -38,8 +38,10 @@ GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Entries/54/Fo
 
 A successful request will return a 200 HTTP response status code with the following response body (truncated for the sake of space).
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Collection(Laserfiche.Repository.Entry)",
   "value": [
@@ -91,14 +93,16 @@ HTTP 200 OK
 
 We can add on to the example scenario and also retrieve field metadata for each document by using the `fields` query parameter. In this example, we will get the `Amount` and `Date` fields for each document.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Entries/54/Folder/Children?fields=Amount&fields=Date
 ```
 
 The response will look like the following (again, truncated for space).
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Collection(Laserfiche.Repository.Entry)",
   "value": [
@@ -196,7 +200,7 @@ HTTP 200 OK
 
 The field values can be formatted using the `formatFields` query parameter. It will format using a default culture if none is requested.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Entries/54/Folder/Children?fields=Amount&fields=Date
     &formatFields=true&culture=fr-FR
 ```
@@ -207,14 +211,16 @@ In the above example, the returned listing contained the default set of properti
 
 We will retrieve the listing from the same Invoices folder, but this time we want the file extension of the documents in the listing.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Entries/{entryId}/Folder/Children?$select=extension
 ```
 
 The response will look like the following (again, truncated for space).
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Collection(Laserfiche.Repository.Entry)",
   "value": [

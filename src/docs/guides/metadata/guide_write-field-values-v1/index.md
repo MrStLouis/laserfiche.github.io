@@ -23,14 +23,16 @@ A field contains a piece of information about a document, such as an author name
 
 **Request Overview**
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*entryId*/fields
 ```
 
 The example updates the **Date**, **Sender**, **Recipients**, and **Subject** fields on entry ID **12345**.
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345/fields
+```
+```json
 {
   "Date":{
     "values":[
@@ -74,8 +76,10 @@ PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345
 
 This call will return a response containing a list of all the fields and their values after the update.
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "value": [
     {

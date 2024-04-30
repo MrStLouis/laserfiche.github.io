@@ -35,12 +35,9 @@ Create an OAuth Web App when you want to write a web app where you can store ser
 1. Start the OAuth authorization code flow to get an access token that can be used to authenticate with the Laserfiche API. Web apps can optionally use the Proof Key for Code Exchange (PKCE) extension for additional security to avoid an authorization code interception attack. For more details on how to use the code challenge and code verifier from the PKCE extension, view the [SPA OAuth flow guide](../guide_oauth-spa/).
 
    - Call the OAuth service authorization endpoint, including the _client_id_ and _redirect_uri_ query parameters for the registered app. See the following example authorization request.
-     - ```xml
+     - ```
          GET https://signin.laserfiche.com/oauth/authorize?client_id=app1&response_type=code&state=someappstate&redirect_uri=https%3A%2F%2Fapp%2Eexample%2Ecom%2Fcallback&customerId=123456789&scope=repository.Read+repository.Write
        ```
-     ```
-
-     ```
    - The **client_id** parameter is the Client ID generated during the application registration process. It can be found on the Developer Console.
    - The **redirect_uri** parameter determines where the OAuth service redirects to after the authorization part. The value must match one of the redirect URIs specified during the application registration process. If the value is not found in application registration, it will return an error in the user's browser and no redirect will happen.
    - The **response_type** parameter is used by the application to inform the authorization server of the desired grant type. The value must be **code** for authorization code grant flow.
@@ -53,19 +50,14 @@ Create an OAuth Web App when you want to write a web app where you can store ser
 1. The consent page will then be shown to the user to decide whether to grant the web app access to their credentials. The user will have 5 minutes to either confirm or deny the consent. After 5 minutes of inactivity, the OAuth service will return an error and they will need to start the authorization flow from the beginning.
 
    - If the user grants access, an authorization code will be generated and sent to the redirect_uri specified in the query parameter and the user's browser will be redirected to redirect_uri. If the state query parameter was used in the first step, it will be sent back with the authorization code. An example successful redirect request is shown below:
-     - ```xml
+     - ```
          https://app.example.com/callback?scope=repository.Read+repository.Write&code=some_auth_code_value&state=someappstate
        ```
-     ```
 
-     ```
    - If the user denies access, an error will be sent to the redirect_uri specified in the query parameter and the user's browser will be redirected to redirect_uri. If the state query parameter was used in the first step, it will be sent back with the error. An example error redirect request is shown below:
-     - ```xml
+     - ```
          https://app.example.com/callback?error=access_denied&error_description=Consent+has+not+been+given.&state=someappstate
        ```
-     ```
-
-     ```
    - Errors include:
      - **invalid_request:** An invalid request may be due to missing required fields.
      - **access_denied:** The user did not give consent to use their credentials, or the consent form has already been completed or expired.
@@ -75,8 +67,7 @@ Create an OAuth Web App when you want to write a web app where you can store ser
 1. After getting the authorization code, the application can exchange it for an access token by calling the token endpoint. The authorization code has a lifetime of 10 minutes. If not used within its lifetime, it will expire and the application must restart the authorization flow.
 
    - **Example Access Token Request**
-
-     - ```xml
+     - ```
              POST https://signin.laserfiche.com/oauth/token HTTP/1.1
              Authorization: Basic *base64url-encoded-client_id-client_secret*
              Content-Type: application/x-www-form-urlencoded
@@ -85,19 +76,19 @@ Create an OAuth Web App when you want to write a web app where you can store ser
                  &redirect_uri=https%3A%2F%2Fapp%2Eexample%2Ecom%2Fcallback
        ```
 
-     ```
+
      - The **grant_type** should be **authorization_code**.
      - The **code** should be the authorization code returned in the previous authorization step.
      - The **redirect_uri** should be identical to the one passed to the */authorize* endpoint in the previous authorization step.
      - The **Authorization** header should be **Basic** authorization with the **client_id** and **client_secret** base64url encoded and used as the username and password respectively. Both **client_id** and **client_secret** are generated during the application registration process and can be found on the Developer Console.
-     ```
 
    - **Example Successful Access Token Response**
 
-     - ```xml
+     - ```
          HTTP/1.1 200 OK
          Content-Type: application/json; charset=UTF-8
-
+       ```
+       ```json
          {
          "access_token": "some_access_token_value",
          "token_type": "bearer",
@@ -107,17 +98,16 @@ Create an OAuth Web App when you want to write a web app where you can store ser
          }
        ```
 
-     ```
      - The returned access token includes an expiration time in seconds. Upon expiration, the application can use the refresh token to get a new one. The refresh token has a lifetime of around 8 hours from the time it was issued. The refresh token can also be invalidated when the user signs out from Laserfiche Cloud.
      - The returned scope is the granted scope by the OAuth Server.
-     ```
 
    - **Example error response**
 
-     - ```xml
+     - ```
          HTTP/1.1 401 Unauthorized
          Content-Type: application/json; charset=UTF-8
-
+       ```
+       ```json
          {
          "error": "invalid_client",
          "error_description": "The client credentials are invalid or authentication failed.",
@@ -129,11 +119,6 @@ Create an OAuth Web App when you want to write a web app where you can store ser
          "traceId": "00-55eea5e3876a0c42a06ad1c78922e247-53d1e1ec0b933944-00"
          }
        ```
-
-     ```
-
-     ```
-
    - Error types include:
      - **unsupported_grant_type:** grant_type is not authorization_code.
      - **invalid_request:** Required field is missing.
@@ -151,7 +136,7 @@ Include the access token in the Bearer Authorization header when accessing the L
 
 Use the **Repositories** route to get a list of repositories current user have access to.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories
 Authorization: Bearer some_access_token_value
 ```
@@ -161,7 +146,7 @@ The OAuth access token is supported for repository v1 and later APIs.
 
 You can make repository API calls like so:
 
-````xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Entries/{entryId}
 Authorization: Bearer some_access_token_value
 ```
@@ -171,7 +156,7 @@ Authorization: Bearer some_access_token_value
 When an access token expires, the web application can use the refresh token to get a new one.
 
 **Example refresh token request**
-```xml
+```
 POST https://signin.laserfiche.com/oauth/token HTTP/1.1
 Authorization: Basic base64url-encoded-client_id-client_secret*
 Content-Type: application/x-www-form-urlencoded
@@ -185,10 +170,11 @@ grant_type=refresh_token&refresh_token=some_refresh_token_value
 **Example successful refresh token response**
 
 In a successful response, the OAuth service will return a new access token with a new refresh token in the response. The new access token will have the same scope as the previous access token.
-```xml
+```
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-
+```
+```json
 {
 "access_token": "another_access_token_value",
 "token_type": "bearer",
@@ -204,10 +190,11 @@ For security reasons, if an old refresh token is reused, the OAuth service will 
 
 **Example error response**
 
-```xml
+```
 HTTP/1.1 401 Unauthorized
 Content-Type: application/json; charset=UTF-8
-
+```
+```json
 {
 "error": "invalid_grant",
 "error_description": "The use of a previously used refresh token has been detected. As a security precaution, the refresh token has been invalidated.",
@@ -222,4 +209,3 @@ Content-Type: application/json; charset=UTF-8
 
 {: .note }
 For web applications, the new refresh token has a lifetime of around 8 hours from the time it was issued.
-````

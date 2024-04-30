@@ -31,23 +31,20 @@ The Laserfiche Cloud APIs follows the [OAuth 2.0 authorization model](../../api/
 1. Follow this guide to [register an OAuth service app in the Developer Console with a long-lasting Authorization Key](../../api/authentication/guide_oauth-service/).
 1. Create an HTTP action in your low-code solution to obtain an Access Token given a long-lasting `{authorizationKey}` obtained during the application registration.
 
-   - ```xml
+   - ```
      POST https://signin.laserfiche.com/oauth/token
      Authorization: Bearer {authorizationKey}
      Content-Type: application/x-www-form-urlencoded
-     ```
-
-   grant_type=client_credentials&scope=repository.ReadWrite
-
-   ```
-
-   ```
+    grant_type=client_credentials&scope=repository.ReadWrite
+    ```
 
 1. The hostname in the request URI may need to be updated to `signin.laserfiche.ca`, `signin.eu.laserfiche.com`, etc., depending on the data center your Laserfiche Cloud repository resides in. For example in Microsoft Power Automate, the **Get Laserfiche Access Token** action will look like:
    - ![](./assets/images/low-code-authenticate-cloud.png)
 1. A successful response will contain the Access Token needed to make Laserfiche API requests.
-   - ```xml
+   - ```
      HTTP 200 OK
+     ```
+     ```json
      {
      "access_token": "...",
      "token_type": "bearer",
@@ -55,11 +52,9 @@ The Laserfiche Cloud APIs follows the [OAuth 2.0 authorization model](../../api/
      "scope": "repository.Read repository.Write"
      }
      ```
-   ```
 
        {: .note }
        **Note:** Authorization Keys and Access Tokens should be securely stored.
-   ```
 1. The Access Token obtained from the **Get Laserfiche Access Token** action can then be used by downstream HTTP actions that interact with the Laserfiche APIs. For example, [import a document using a low-code tool](#use-case-importing-a-document-from-microsoft-onedrive-into-laserfiche-using-microsoft-power-automate).
 
 ### Self-Hosted Laserfiche
@@ -69,7 +64,7 @@ The Laserfiche Cloud APIs follows the [OAuth 2.0 authorization model](../../api/
 
 HTTP requests to Laserfiche API Server require the Authorization header to contain an Access Token. See [Obtaining an Access Token using username/password authentication](../../api/server/#authenticating-with-the-self-hosted-laserfiche-api).
 
-```xml
+```
 POST https://{APIServerHostName}/LFRepositoryAPI/v1/Repositories/{repositoryId}/Token
 Content-Type: application/x-www-form-urlencoded
 
@@ -82,8 +77,10 @@ For example in Microsoft Power Automate, the **Get Laserfiche Access Token** act
 
 A successful response will contain the Access Token needed to make Laserfiche API requests.
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "access_token": "...",
   "expires_in": 900,
@@ -120,7 +117,7 @@ See the [importing a document guide](../../guides/documents-and-folders/guide_im
      - As an example, the second part assigns the `Email` template and the `Sender` and `Recipients` fields to the imported file. The metadata may need to be updated if the template and field definitions do not exist in the Laserfiche repository.
 
 1. Copy and paste the following request body.
-   - ```xml
+   - ```json
        {
        "$content-type": "multipart/form-data",
        "$multipart": [
@@ -164,8 +161,10 @@ See the [importing a document guide](../../guides/documents-and-folders/guide_im
        }
      ```
 1. A successful response will contain the entry ID of the imported document and an API link to get more document properties.
-   - ```xml
+   - ```
        HTTP 201 Created
+     ```
+     ```json
        {
        "operations": {
            "entryCreate": {

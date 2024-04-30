@@ -21,14 +21,16 @@ Tags are used to categorize entries on an entry-by-entry basis. You can also use
 
 **Request Overview**
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/repoId/Entries/entryId/tags
 ```
 
 This example assigns the "Approval Pending" tag to the entry with ID 12345 and will remove any tags that are currently assigned to the entry. If you want to retain the existing tags assigned to the entry, you must include them in the request.
 
-```xml
+```
 PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345/tags
+```
+```json
 {
   "tags": [
     "Approval Pending"
@@ -41,8 +43,10 @@ PUT https://api.laserfiche.com/repository/v1/Repositories/r-abc123/Entries/12345
 
 The response will contain a list of all assigned tags and the tag properties. In this example, we assigned one tag and the response contains the properties of the "Approval Pending" tag.
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "value": [
     {

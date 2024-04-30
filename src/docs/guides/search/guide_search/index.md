@@ -26,8 +26,10 @@ A search operation follows the [long operation](../../../getting-started/guide_l
 
 In the following example, we'll search a specific folder, _Meeting Minutes_, for entries with the phrase _Windham Ave_ in their names, document text, fields, or annotation text.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Searches/SearchAsync
+```
+```json
 {
     "searchCommand":"{LF:Basic~=\"Windham Ave\",option=\"DFANLT\"}&amp;({LF:LOOKIN=\"\\Meeting Minutes\"})"
 }
@@ -38,8 +40,10 @@ POST https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Searches/Sea
 
 This call will return a task ID that represents the running search operation.
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
 "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Laserfiche.Repository.StartTaskResponse",
 "taskId": "f1201c58-0dd0-4e39-abcc-450acff1b791"
@@ -51,8 +55,10 @@ Check the status of the search operation by calling `GET https://api.laserfiche.
 `GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Tasks?taskIds=f1201c58-0dd0-4e39-abcc-450acff1b791`
 The response will return the status of the operation, for example:
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
 "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Tasks",
 "value": [
@@ -77,8 +83,10 @@ The above response shows that the search is complete. The search results set can
 `GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Searches/f1201c58-0dd0-4e39-abcc-450acff1b791/Results`
 The response will contain a list of entries representing the results of your search query, for example:
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
     "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Results",
     "value":[
@@ -126,14 +134,16 @@ HTTP 200 Ok
 
 To get the text context hits for a document in the search results, we can call `GET https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Searches/{taskId}/Results/{rowNumber}/ContextHits` with the appropriate row number of the search result.
 
-```xml
+```
     GET https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Searches/f1201c58-0dd0-4e39-abcc-450acff1b791/Results/18/ContextHits
 ```
 
 The call will return all of the context hits with "Windham Ave" that was found in the specified document.
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
 "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Collection(Laserfiche.Repository.SearchContextHit)",
 "value": [

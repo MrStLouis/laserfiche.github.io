@@ -31,8 +31,10 @@ Let's look at a specific example with the copy entry API call.
 
 First we’ll call the copy API to copy a folder and its content to another folder in the repository:
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Entries/{destinationEntryId}/Laserfiche.Repository.Folder/children/CopyAsync
+```
+```json
 {
     "sourceId": 9,
     "name": "MyCopiedFolder"
@@ -41,8 +43,10 @@ POST https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Entries/{des
 
 The API call will return a token in the response:
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
     "token": "12345678-abcd-efgh-ijkl-123456789012"
 }
@@ -50,14 +54,16 @@ HTTP 202 Accepted
 
 Long operation APIs can be found under the Tasks resource. Using the token that we just received, we can check the status of the task. This call does not have a request body:
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Tasks/{operationToken}
 ```
 
 The API will return the status of the operation, for example:
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
     "operationToken": "12345678-abcd-efgh-ijkl-123456789012",
     "operationType": "CopyEntry",
@@ -69,21 +75,23 @@ HTTP 202 Accepted
 
 In the above example response, the operation is still running. If we call the status API again and the operation has completed, we will receive a redirect to the following location:
 
-```xml
+```
 HTTP 302 Found
 Location: https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Entries/{newlyCreatedEntryId}
 ```
 
 If we make a GET request using the link
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/{repoId}/Entries/{newlyCreatedEntryId}
 ```
 
 We will get back the newly created entry details, see the following sample response:
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
     "id": 1234,
     "name": "MyCopiedFolder",

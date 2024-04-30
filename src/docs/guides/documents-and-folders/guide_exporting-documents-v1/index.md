@@ -21,7 +21,7 @@ Retrieving a document from the repository is a multi-step process that can be ac
 
 Before the export can begin, the client will need information about the file content and size. That information can be acquired through this HEAD request.
 
-```xml
+```
 HEAD https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*entryId*/Laserfiche.Repository.Document/edoc
 ```
 
@@ -30,7 +30,7 @@ HEAD https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*ent
 
 If the request is successful, the API will return a 200 HTTP response status code. There is no JSON response body for this request, but the headers of the response will return vital information about the document.
 
-```xml
+```
 HTTP 200 OK
 Content-Length: 271407
 Content-Type: application/pdf
@@ -43,7 +43,7 @@ Content-Type: application/pdf
 
 Now that we have the length and type of the document, we can download the document with the following GET request. Note that this route is identical to the last request, except for the HTTP method.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/*repoId*/Entries/*entryId*/Laserfiche.Repository.Document/edoc
 ```
 
@@ -51,7 +51,7 @@ If the request is successful, it will return a 200 OK HTTP response status code.
 
 If the document that you are exporting is very large, you may want to break up the export into multiple parts. The `Range` header can be used in the GET request to get a specific range of bytes.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/repoId/Entries/entryId/Laserfiche.Repository.Document/edoc
 Range: bytes=0-1000
 ```
@@ -70,7 +70,7 @@ If the response is successful, it will return a 206 Partial Content HTTP respons
 
 One alternative to using the GET request above, is to send a POST request that is identical in response body, but instead allows for you to additionally specify an audit reason. Audit reasons can be retrieved through this GET request.
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v1/Repositories/*repoId*/AuditReasons
 ```
 
@@ -79,8 +79,10 @@ For this scenario, we'll export the document using the audit reason with ID 71, 
 {: .note }
 Note: The only difference between this route and the one mentioned in the previous example is the addition of the request body. All notes in the previous example also apply to the one mentioned in this section.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/repoId/Entries/entryId/Laserfiche.Repository.Document/GetEdocWithAuditReason
+```
+```json
 {
   "auditReasonId": 71,
   "comment": "Request ID 26164"

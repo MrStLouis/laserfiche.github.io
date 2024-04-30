@@ -30,8 +30,10 @@ Let's look at a specific example with the copy entry API call.
 
 First we’ll call the copy API to copy a folder and its content to another folder in the repository:
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Entries/{destinationEntryId}/Folder/CopyAsync
+```
+```json
 {
     "sourceId": 9,
     "name": "CopiedEntry",
@@ -41,8 +43,10 @@ POST https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Entrie
 
 The API call will return a task ID in the response:
 
-```xml
+```
 HTTP 202 Accepted
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Laserfiche.Repository.StartTaskResponse",
   "taskId": "4a250850-41a4-4e31-8cef-0feb57a344ea"
@@ -51,14 +55,16 @@ HTTP 202 Accepted
 
 Long operation APIs can be found under the Tasks resource. Using the task ID that we just received, we can check the status of the task. This call does not have a request body:
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Tasks?taskIds={taskId}
 ```
 
 The API will return the status of the task, for example:
 
-```xml
+```
 HTTP 200 OK
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Tasks",
   "value": [
@@ -83,14 +89,16 @@ In the above example response, the operation has completed successfully.
 
 If we make a GET request using the _uri_ received in the response:
 
-```xml
+```
 GET https://api.laserfiche.com/repository/v2/Repositories/{repositoryId}/Entries/{newlyCreatedEntryId}
 ```
 
 We will get back the newly created entry details. See the following sample response:
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "@odata.context": "https://api.laserfiche.com/repository/v2/$metadata#Repositories('r-abc123')/entries/Laserfiche.Repository.Folder/$entity",
   "@odata.type": "#Laserfiche.Repository.Folder",

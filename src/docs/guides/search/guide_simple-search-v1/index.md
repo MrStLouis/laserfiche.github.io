@@ -19,8 +19,10 @@ The simple search API can run a search query in the repository and return the re
 
 In the following simple search, we want to find entries with a specific value in the _Purchase Order ID_ field.
 
-```xml
+```
 POST https://api.laserfiche.com/repository/v1/Repositories/repoId/SimpleSearches
+```
+```json
 {
 "searchCommand":"{[]:[Purchase Order ID]=\"789\"}"
 }
@@ -28,8 +30,10 @@ POST https://api.laserfiche.com/repository/v1/Repositories/repoId/SimpleSearches
 
 The response will include a listing of the entries that matched the search query. See the following sample response for the above search:
 
-```xml
+```
 HTTP 200 Ok
+```
+```json
 {
   "value":[
     {
@@ -40,7 +44,7 @@ HTTP 200 Ok
       "folderPath":"",
       "creator":"Guide User",
       "creationTime":"2020-12-12T12:00:00-00:00",
-      "lastModifiedTime":"2020-12-12T12:00:00-00:00,
+      "lastModifiedTime":"2020-12-12T12:00:00-00:00",
       "entryType":"Document",
       "templateName":null,
       "templateId":0,
