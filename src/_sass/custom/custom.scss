@@ -1,4 +1,4 @@
-footer {
+#colophon {
   background-color: rgb(252, 252, 252);
   a:not([class]) {
     text-decoration: none;
@@ -9,6 +9,12 @@ footer {
     padding-inline-start: 0px;
     margin: 12px;
     margin-left: 0px;
+    
+    li {
+      &::before {
+        content: none;
+      }
+    }
   }
 
   .container {

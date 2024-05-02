@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: custom
 title: Integrating with Laserfiche
 nav_order: 1
 parent: Overview
