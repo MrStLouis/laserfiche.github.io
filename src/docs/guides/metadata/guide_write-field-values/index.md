@@ -64,7 +64,6 @@ PUT https://api.laserfiche.com/repository/v2/Repositories/r-abc123/Entries/12345
 
 {: .note}
 
-- **Note:**
 - If there are other fields with existing values assigned to the entry, your request body must include the existing values or else the update will clear out values not included in the request.
 - For the **Date**, the value should not contain any time zone information. Datetime values are stored as-is in the repository. If the value contains any time zone offset information like "Z" or "+08:00", the request will be rejected.
 

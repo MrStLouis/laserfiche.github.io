@@ -112,8 +112,10 @@ See the [importing a document guide](../../guides/documents-and-folders/guide_im
    - The Access Token from the **Get Laserfiche Access Token** [action](#authentication) must be added to the Authorization header. Format the Authorization header value as follows `Bearer @{body('Get_Laserfiche_Access_Token')['access_token']}`.
    - The request **body** is a multipart/form-data with two parts.
      - The first part contains the file content from the **Get file content using path** action.
-     {: .note }
-     **Note:** The `Content-Type` header or the extension in the filename in the `Content-Disposition` header is used to determine the file type for the document imported to Laserfiche.
+     
+        {: .note }
+        **Note:** The `Content-Type` header or the extension in the filename in the `Content-Disposition` header is used to determine the file type for the document imported to Laserfiche.
+        
      - As an example, the second part assigns the `Email` template and the `Sender` and `Recipients` fields to the imported file. The metadata may need to be updated if the template and field definitions do not exist in the Laserfiche repository.
 
 1. Copy and paste the following request body.
