@@ -1,4 +1,4 @@
-#colophon {
+footer {
   background-color: rgb(252, 252, 252);
   a:not([class]) {
     text-decoration: none;
@@ -16,6 +16,11 @@
       }
     }
   }
+
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
 
   .container {
     padding-top: 4rem;
