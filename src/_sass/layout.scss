@@ -22,6 +22,7 @@
 }
 
 .main {
+  min-height: 100vh;
   @include mq(md) {
     position: relative;
     margin-left: $nav-width-md;
@@ -36,6 +37,7 @@
 }
 
 .main-content-wrap {
+  min-height: calc(100vh - $header-height - $footer-height);
   @include container;
 
   padding-top: $gutter-spacing-sm;
