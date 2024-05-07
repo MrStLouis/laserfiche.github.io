@@ -49,7 +49,7 @@
   }
   .footer-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     div {
       font-weight: bold;
       color: $lf-orange;
@@ -72,8 +72,8 @@
           div {
             color: #222c33;
             font-weight: normal;
-            margin: 0px;
           }
+          margin-right: 4rem;
         }
         #ot-sdk-btn {
           border: none !important;
