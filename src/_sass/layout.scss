@@ -24,17 +24,13 @@
 .main {
   @include mq(md) {
     position: relative;
-    max-width: $content-width;
     margin-left: $nav-width-md;
   }
 
   @include mq(lg) {
     // stylelint-disable function-name-case
     // disable for Max(), we want to use the CSS max() function
-    margin-left: Max(
-      #{$nav-width},
-      calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width})
-    );
+    margin-left: $nav-width;
     // stylelint-enable function-name-case
   }
 }
@@ -48,6 +44,15 @@
   @include mq(md) {
     padding-top: $gutter-spacing;
     padding-bottom: $gutter-spacing;
+    max-width: $content-width;
+  }
+
+  @include mq(lg) {
+    // stylelint-disable function-name-case
+    // disable for Max(), we want to use the CSS max() function
+    margin-left: 
+      calc((100% - #{$content-width}) / 2);
+    // stylelint-enable function-name-case
   }
 }
 
