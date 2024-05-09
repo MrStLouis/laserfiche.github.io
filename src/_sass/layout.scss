@@ -133,13 +133,13 @@
   display: flex;
   height: 100%;
   align-items: center;
-  padding-top: $sp-3;
+  padding-top: $sp-4;
   padding-bottom: $sp-3;
   color: $body-heading-color;
   @include fs-6;
 
   @include mq(md) {
-    padding-top: $sp-2;
+    padding-top: $sp-4;
     padding-bottom: $sp-2;
   }
 }
@@ -150,7 +150,7 @@
     height: 100%;
     background-image: url($logo);
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: center center;
     background-size: contain;
   }
 }
