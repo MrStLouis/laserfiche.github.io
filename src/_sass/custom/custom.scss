@@ -1,7 +1,6 @@
 #footer {
   min-height: $min-footer-height;
   background-color: rgb(252, 252, 252);
-  font-size: clamp(.9375rem,.896rem + .1156vw,1rem);
   a:not([class]) {
     text-decoration: none;
   }
