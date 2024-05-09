@@ -49,7 +49,7 @@
   }
   .footer-links {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
     div {
       font-weight: bold;
       color: $lf-orange;
@@ -63,6 +63,7 @@
         display: flex;
         flex-direction: row;
         align-items: space-around;
+        flex-wrap: wrap;
         div {
           color: #8ba1b0;
           font-weight: bold;
