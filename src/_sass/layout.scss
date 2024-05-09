@@ -37,7 +37,7 @@
 }
 
 .main-content-wrap {
-  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  min-height: calc(100vh - #{$header-height} - #{$min-footer-height});
   @include container;
 
   padding-top: $gutter-spacing-sm;

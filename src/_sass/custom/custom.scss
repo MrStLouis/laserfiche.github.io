@@ -1,5 +1,5 @@
 #footer {
-  height: $footer-height;
+  min-height: $min-footer-height;
   background-color: rgb(252, 252, 252);
   a:not([class]) {
     text-decoration: none;
@@ -50,15 +50,18 @@
   .footer-links {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     div {
       font-weight: bold;
       color: $lf-orange;
       margin: 10px;
+      margin-right:0px;
     }
 
     .Resources,
     .about-footer-menu {
       padding: 10px;
+      padding-right: 0px;
       .intermediate-menu {
         display: flex;
         flex-direction: row;
