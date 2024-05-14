@@ -17,14 +17,14 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 {: .note }
 **Note:** The following guide only applies to Laserfiche Cloud.
 
-Service Principals are a new trustee license type designed specifically for non-human users to leverage the Laserfiche API.
+Service Principals are a trustee license type designed specifically for non-human users to leverage the Laserfiche API.
 
 ## Benefits of Using a Service Principal
 
 - Service Principals can perform work in Laserfiche services as a non-human user for integration use cases involving syncing data between Laserfiche and another platform.
   - Example use case: Your organization stores customer data in a CRM platform and leverages the Laserfiche repository for archival of documents related to each customer. People within your organization may update information in the CRM platform throughout the day. In order to keep the information in the Laserfiche Repository up to date with the changes made in the CRM, you write an integration that performs a nightly sync between the two platforms. This nightly operation is not an action performed by a specific human user in your organization. It is a “system-to-system” integration between Laserfiche and the CRM platform. This is a perfect scenario to use a Service Principal in the integration code to authenticate to the Laserfiche Repository and perform the sync.
 - Service Principals can perform work in Laserfiche services on behalf of end users of an integration who may or may not have Laserfiche licenses.
-  - Example use case: Your Accounts Payable department uses an ERP system to manage accounting transactions. The invoices for these transactions are stored in the Laserfiche repository. When end users of the ERP software create a new transaction, your integration code can authenticate as a Service Principal and import the invoice into the Laserfiche Repository behind the scenes. The end user may not know that the import happened, and Laserfiche doesn’t know that the end user exists either. The Service Principal did the work of the import on behalf of the end user. Note in this situation, there is no granular security or auditability on each individual end user. Every action in the repository is recorded by the Service Principal.
+  - Example use case: Your Accounts Payable department uses an ERP system to manage accounting transactions. The invoices for these transactions are stored in the Laserfiche repository. When end users of the ERP software create a new transaction, your integration code can authenticate as a Service Principal and import the invoice into the Laserfiche Repository behind the scenes. The end user may not know that the import happened, and Laserfiche doesn’t know that the end user exists either. The Service Principal did the work of the import on behalf of the end user. Note in this situation, there is no granular security or auditability on each individual end user. Every action in the repository is recorded as the Service Principal.
 - Service Principals can’t cover every integration scenario. Often times you will want end users to authenticate to your integration code using their own Laserfiche credentials to leverage the full power of security and auditability. The best way to achieve this is through the OAuth 2.0 standard.
 
 ## Service Principal Limitations
