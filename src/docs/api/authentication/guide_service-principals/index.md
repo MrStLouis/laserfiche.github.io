@@ -39,19 +39,19 @@ Check out the steps below to learn how to create a Service Principal, maintain i
 
 1. In the Account Administration page, navigate to the Users tab. On the far right, there will be a subsection labeled Service Principals. ![](./assets/images/service-principals-01.png)
 
-1. Click "Add Service Principal". Like any other regular user type, you can assign the username for the Service Principal, give it a friendly display name, and add it to any existing Laserfiche Groups. For the User License Type, assign it a Service Principal user license. You may also assign Access Rights to the Service principal. Be sure to give the Service Principal access to the Laserfiche services if you intend to use it with the Laserfiche API! ![](./assets/images/service-principals-02.png)
-1. When you're done, hit Create to save your changes.
+1. Click "Add Service Principal". Like any other regular user type, you can assign the username for the Service Principal, give it a friendly display name, and add it to any existing Laserfiche Groups. You may also assign Access Rights to the Service principal. Be sure to give the Service Principal access to the Laserfiche services if you intend to use it with the Laserfiche API. ![](./assets/images/service-principals-02.png)
+1. When you're done, click Create to save your changes.
 
 ### Generating Keys
 
 Rather than user-generated passwords, Service Principals have Service Principal Keys that Laserfiche cryptographically generates for you.
 
 1. After you've created the Service Principal, click back into the user and note the "Create Service Principal Key(s)" button. Create the keys.![](./assets/images/service-principals-03.png)
-1. A dialog will pop up with the option to save a text file of the keys or copy them to your clipboard. Note that this is the only time you will be able to view these key values, so keep them in a safe place!
+1. A dialog will pop up with the option to save a text file of the keys or copy them to your clipboard. Note that this is the only time you will be able to view these key values, so keep them in a safe place.
 
 ### Rotating Keys
 
-A Service Principal will always have two keys at any given time. Either of the keys may be used as the password to authenticate as the Service Principal, so long as the key is active.
+A Service Principal can have two keys at any given time. Either of the keys may be used as the password to authenticate as the Service Principal, so long as the key is active.
 
 1. To regenerate a new key, click the "Rotate" action for the desired key that you want to rotate. ![](./assets/images/service-principals-04.png)
 
