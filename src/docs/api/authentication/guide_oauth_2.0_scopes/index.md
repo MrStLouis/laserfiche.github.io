@@ -30,12 +30,12 @@ An application should be designed to provide useful limited functionality when o
 
 ### Configure Pre-Approved Scopes in the Developer Console
 
-Before an app can request an access token with scopes, a Developer Console Administrator must first pre-approve the scopes that can be requested. This is to ensure the app cannot request unapproved scopes and be granted inappropriate access to Laserfiche resources. The application will only have access to the intersection of the scopes configured here AND the access rights of the signed-in user or service principal. This is especially important with the table API and project-based security. See the [table API security overview](./../../odata-table-api/index.md#Security) for details.
+Before an app can request an access token with scopes, a Developer Console Administrator must first pre-approve the scopes that can be requested. This is to ensure the app cannot request unapproved scopes and be granted inappropriate access to Laserfiche resources. The application will only have access to the intersection of the scopes configured here AND the access rights of the signed-in user or service principal. This is especially important with the table API and project-based security. See the [table API security overview](./../../odata-api-reference/#security) for details.
 
 1. Sign in to the [Developer Console](../../../getting-started/developer-console/).
 1. In the Applications listing, select the app you want to configure.
 1. On the **App Configuration** page, select the **Authentication** tab.
-1. In the **OAuth 2.0 Scopes** section, select the needed scopes for your app to function properly. See below for the available scopes based and what they represent for the different APIs.
+1. In the **OAuth 2.0 Scopes** section, select the needed scopes for your app to function properly. See below for the available scopes and what they represent for the different APIs.
 
 ### Requesting an Access Token with Scopes
 
@@ -80,7 +80,7 @@ Examples of Repository API granular scopes
 All scopes must be both configured in the developer console and requested in the token request in order to apply to the access token. If using basic authentication, the scopes must be requested when the username/password combination is generated in developer console.
 
 {: .note }
-For tables, the resulting rights of the app are an intersection of the table read/write scopes configured, the project scopes configured, and whether the user or service principal has access to the specified projects. See the [table API security overview](./../../odata-table-api/index.md#Security) for more details.
+For tables, the resulting rights of the app are an intersection of the table read/write scopes configured, the project scopes configured, and whether the user or service principal has access to the specified projects. See the [table API security overview](./../../odata-api-reference/#security) for more details.
 
 | Scopes      | Description                                                                                       |
 | ----------- | ------------------------------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ For tables, the resulting rights of the app are an intersection of the table rea
 | project scopes | Allows the app to have access to resources in a specific project. To access global resources, add the "project/Global" scope. If no projects are specified the app will NOT have access to any tables even if table.Read and table.Write are specified |
 
 {: .note }
- An application can ONLY access tables within the projects specified and only IF the signed-in user or service principal has the rights to those projects as well. See [table API security overview](./../../odata-table-api/index.md#Security) for more information on how access rights and project scopes work together.
+ An application can ONLY access tables within the projects specified and only IF the signed-in user or service principal has the rights to those projects as well. See [table API security overview](./../../odata-api-reference/#security) for more information on how access rights and project scopes work together.
 
 ### Table API Granular (Read/Write) Scopes
 

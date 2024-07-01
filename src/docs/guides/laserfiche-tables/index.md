@@ -11,6 +11,6 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 # Working with Lookup Tables
 
-See the [table API overview](./../../api/odata-table-api/) for instructions on how to configure your application to use the table API.
+See the [table API overview](./../../odata-api-reference/) for instructions on how to configure your application to use the table API.
 
 ## Using lookup tables in Excel
