@@ -12,7 +12,7 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 ## Overview
 
-The Laserfiche OData Table API allows users to perform actions on their lookup tables. The API follows the OData standard to allow users to leverage OData capabilities and use the API from applications such as Excel and PowerBI. To use the API you will need an OAuth access token or a basic authentication username/password generated in Developer Console. Lookup tables are secured using project-based security.
+The Lookup Table OData API allows users to interact with data stored in their lookup tables. It follows the [OData version 4 standard](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html) which allows you to use that standard to access and perform CRUD on your Laserfiche Lookup Tables from any application. Major use cases include reporting in Power BI or Excel. For more information on how to use an OData API [see the OData documentation](https://www.odata.org/getting-started/basic-tutorial/). You can explore the API using the [Swagger playground](./../../api/playground/). Lookup tables are secured using project-based security.
 
 ## Try it out
 
