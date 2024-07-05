@@ -6,7 +6,7 @@ redirect_from:
   - guides/guide_oauth_2.0_scopes.html
   - guide_oauth_2.0_scopes.html
 parent: Authentication
-grand_parent: API
+grand_parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

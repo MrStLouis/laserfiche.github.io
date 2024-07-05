@@ -5,7 +5,7 @@ nav_order: 3
 redirect_from:
   - api/API.html
   - api/playground.html
-parent: API
+parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

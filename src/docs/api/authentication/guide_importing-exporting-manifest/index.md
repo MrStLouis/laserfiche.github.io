@@ -6,7 +6,7 @@ redirect_from:
   - guides/guide_importing-exporting-manifest.html
   - guide_importing-exporting-manifest.html
 parent: Authentication
-grand_parent: API
+grand_parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

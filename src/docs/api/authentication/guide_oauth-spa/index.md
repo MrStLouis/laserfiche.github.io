@@ -6,7 +6,7 @@ redirect_from:
   - guides/guide_oauth-spa.html
   - guide_oauth-spa.html
 parent: Authentication
-grand_parent: API
+grand_parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

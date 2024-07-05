@@ -1,6 +1,6 @@
 ---
 layout: default
-title: API
+title: Laserfiche APIs
 nav_order: 4
 redirect_from:
   - guides/guide_overview-of-the-laserfiche-api.html

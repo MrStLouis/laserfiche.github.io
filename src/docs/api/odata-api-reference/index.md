@@ -2,7 +2,7 @@
 layout: default
 title: OData Table API
 nav_order: 1
-parent: API
+parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

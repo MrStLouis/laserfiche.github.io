@@ -39,6 +39,10 @@ Assign values to Laserfiche fields. [Learn More](../../guides/metadata/guide_wri
 
 Learn how to import documents. [Learn More](../../guides/documents-and-folders/guide_importing-documents/)
 
+## Generate reports based on lookup tables
+
+Learn how to work with lookup tables. [Learn More](../../guides/laserfiche-tables/)
+
 ## Where can I use the Laserfiche API?
 
 The Laserfiche API is available for Laserfiche Cloud and [Self-Hosted](../../api/server/) Laserfiche instances.
