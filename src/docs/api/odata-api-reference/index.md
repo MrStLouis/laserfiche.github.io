@@ -20,7 +20,7 @@ Use [swagger](./../playground/index.md) to explore the API's possibilities.
 
 In order to authenticate, follow the instructions in [Authenticate to the Swagger playground](./../authentication/guide_authenticating-to-the-swagger-playground/) or [Autenticate to the Laserfiche API](./../authentication/guide_authenticate-to-the-laserfiche-api/). The table API supports both Bearer access token authentication and Basic username/password authentication for use with applications like Excel and Power BI. Those details can be found in the links above.
 
-Note that there are some security considerations to keep in mind when using the table API which are noted below.
+There are some security considerations to keep in mind when using the table API which are noted below.
 
 ## Security
 
