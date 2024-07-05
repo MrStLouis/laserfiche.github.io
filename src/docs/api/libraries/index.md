@@ -32,7 +32,7 @@ Client Core API: [Documentation](https://laserfiche.github.io/lf-api-client-core
 
 Repository API: [Documentation](https://laserfiche.github.io/lf-repository-api-client-dotnet/docs/v2/index.html), [NuGet Package](https://www.nuget.org/packages/Laserfiche.Repository.Api.Client.V2)
 
-Sample Projects: [Console Application](https://github.com/Laserfiche/lf-sample-repository-api-dotnet-srv)
+Sample Projects: [Console Application](https://github.com/Laserfiche/laserfiche-api-use-cases-dotnet)
 
 ### Java
 
