@@ -11,7 +11,7 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 # Working with Lookup Tables
 
-See the [table API overview](./../../odata-api-reference/) for instructions on how to configure your application to use the table API.
+See the [table API overview](./../../api/odata-api-reference/) for instructions on how to configure your application to use the table API.
 
 The Laserfiche Lookup Table API supports the OData 4 standard, which enables it to be used with popular reporting applications like PowerBI, Tableau, and Excel.  This guide will walk you through how to connect to your Lookup Tables from PowerBI and Excel, but these instructions should generally apply to most reporting tools that support connecting to data via the OData standard.
 
