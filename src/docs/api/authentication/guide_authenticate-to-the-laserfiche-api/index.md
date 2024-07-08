@@ -18,6 +18,7 @@ Create a connection to Laserfiche services to begin using the Laserfiche API. Su
 
 {: .note }
 Note: Access Tokens used to access APIs are secrets and should be stored securely. To prevent CSRF attacks, it's NOT recommended to store secrets or sensitive information in cookies.
+One way to do this is to store the token... 
 
 For Laserfiche Cloud, version 1 and later of the APIs follow the OAuth model.
 
