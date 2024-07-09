@@ -26,7 +26,7 @@ Lookup Tables are configured in `Process Automation -> Data Management -> Lookup
 {: .note }
 **Note:** Service Principal account must have Process Automation Administrator role.
 
-![](./assets/images/DevConsoleCreateApp.png){: width ="200"}
+![](./assets/images/DevConsoleCreateApp.png){: width ="300" }
 
 ![](./assets/images/DevConsoleCreateKey.png){: width ="200"}
 

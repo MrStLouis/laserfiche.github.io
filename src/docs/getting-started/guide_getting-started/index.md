@@ -41,7 +41,7 @@ Learn how to import documents. [Learn More](../../guides/documents-and-folders/g
 
 ## Generate reports based on lookup tables
 
-Learn how to work with lookup tables. [Learn More](../../guides/laserfiche-tables/)
+Learn how to work with lookup tables. [Learn More](../../guides/guide-laserfiche-tables/)
 
 ## Where can I use the Laserfiche API?
 
