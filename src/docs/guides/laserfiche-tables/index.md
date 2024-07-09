@@ -11,7 +11,7 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 # Accessing Lookup Tables from Reporting Applications
 
-The Laserfiche Lookup Table API supports the OData 4 standard, which enables it to be used with popular reporting applications like PowerBI, Tableau, and Excel.  This guide will walk you through how to connect to your Lookup Tables from PowerBI and Excel, but these instructions should generally apply to most reporting tools that support connecting to data via the OData standard. If this is your first time working with the Lookup Table API, it is recommended that you review the [table API overview](./../../api/odata-api-reference/) first.
+The Laserfiche Lookup Table API supports the OData 4 standard, which enables it to be used with popular reporting applications like PowerBI, Tableau, and Excel.  This guide will walk you through how to connect to your Lookup Tables from these tools, but these instructions should generally apply to most reporting tools that support connecting to data via the OData standard. If this is your first time working with the Lookup Table API, it is recommended that you review the [table API overview](./../../api/odata-api-reference/) first.
 
 ## 1. Configure a Lookup Table
 Lookup Tables are configured in `Process Automation -> Data Management -> Lookup Tables` and belong to either `Global` or a specific Process Automation Project which defines the security scope. You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
@@ -80,3 +80,20 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 5. You should now see the schema for your Lookup Table in the Data pane.  You can now select individual columns from your table to drag onto the PowerBI canvas and build your visualizations and reports.
 
  	![](./assets/images/PowerBIODataFeedDataPane.png){: width ="200"}
+
+### Tableau
+	
+1. From the Tableau "Connect" screen, under the "To a Server" heading, select "More...", then "OData".
+
+	![](./assets/images/TableauOdataMenu.png){: width ="200"}
+
+2. In the Odata window, enter the appropriate URL (see below) for your Laserfiche Cloud environment.  Then select the "Basic" authentication option and enter the Username and Password you created in the Developer Console.
+	- US Cloud Customers: https://api.laserfiche.com/odata4/table/
+	- CA Cloud Customers: https://api.laserfiche.ca/odata4/table/
+	- EU Cloud Customers: https://api.eu.laserfiche.com/odata4/table/
+
+ 	![](./assets/images/TableauCreds.png){: width ="200"}
+
+3. You should now see the schema for your Lookup Table in the main Tableau canvas.  You can now select individual columns from your table to drag onto the canvas and build your visualizations and reports.
+
+ 	![](./assets/images/TableauSchema.png){: width ="200"}
