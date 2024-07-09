@@ -19,23 +19,20 @@ Lookup Tables are configured in `Process Automation -> Data Management -> Lookup
 {: .note }
 **Note:** The security scopes e.g. `project\Global` or `project\YourProjectName` and `table.Read` must be configured in the Service Application and included in the credentials.
 
-## 2. Create a Service Principal Account
-Before you start, you'll want to set up a few items in Laserfiche. To use the Laserfiche Lookup Table API with OData compliant reporting tools, you'll need to set up a service app in the Developer Console. You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later). Review our [dedicated guide](./../../api/authentication/guide_service-principals/) on this topic for more details.
+## 2. Create your App in the Laserfiche Developer Console
+- You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later). Review our [dedicated guide](./../../api/authentication/guide_service-principals/) on this topic for more details.
+- -  Create a Service Application to represent the integration with your reporting tools. Follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.  It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that is supported by  most reporting tools like PowerBI, Excel, or Tableau.
 
 {: .note }
 **Note:** Service Principal account must have Process Automation Administrator role.
 
-
-## 3. Create your App in the Laserfiche Developer Console
-Once you have your Service Principal Key String, you'll need to follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.  It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that will work with most reporting tools like PowerBI, Excel, or Tableau.
-
-<!--
 ![](./assets/images/DevConsoleCreateApp.png){: width ="200"}
 
 ![](./assets/images/DevConsoleCreateKey.png){: width ="200"}
--->
 
-## 4. Create an OData Connection to the Laserfiche API
+![](./assets/images/DevConsoleKeyandScopes.png){: width ="200"}
+
+## 3. Create an OData Connection to the Laserfiche API
 At this point, you should be ready to set up your reporting tool of choice to access your Lookup Table data. In the steps below we will configure Excel and PowerBI, but the steps should be very similar for most other OData compliant applications.
 
 ### Excel (Microsoft Office 365)
@@ -49,15 +46,15 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 	- CA Cloud Customers: https://api.laserfiche.ca/odata4/table/
 	- EU Cloud Customers: https://api.eu.laserfiche.com/odata4/table/
    ![](./assets/images/ExcelOdataFeedURL.png){: width ="200"}
-3. In the next window,  select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously.  In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
+3. In the next window, select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously. In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
    
    ![](./assets/images/ExcelOdataFeedCreds.png){: width ="200"}
    
-4. In the Navigator window you should now see all the Lookup Tables that your app has access to view.  You can now select a table and click the "Load" button.  In our example, we will select the "BuildingPermits" table.
+4. In the Navigator window you should now see all the Lookup Tables that your app has access to view. You can now select a table and click the "Load" button. In our example, we will select the "BuildingPermits" table.
    
    ![](./assets/images/ExcelOdataNavigator.png){: width ="200"}
    
-5. The Lookup Table rows should now be loaded into a new sheet in your Excel file.  You can work with the data within Excel to build reports and analyze. 
+5. The Lookup Table rows should now be loaded into a new sheet in your Excel file. You can work with the data within Excel to build reports and analyze. 
 	
 ### PowerBI Desktop
 	
@@ -72,7 +69,7 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 
 	![](./assets/images/PowerBIODataFeedURL.png){: width ="200"}
 	
-3. In the next window,  select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously.  In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
+3. In the next window,  select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously. In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
 
 	![](./assets/images/PowerBICreds.png){: width ="200"}
    
@@ -83,7 +80,3 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 5. You should now see the schema for your Lookup Table in the Data pane.  You can now select individual columns from your table to drag onto the PowerBI canvas and build your visualizations and reports.
 
  	![](./assets/images/PowerBIODataFeedDataPane.png){: width ="200"}
-
-
-## Troubleshooting
-If you experience issues connecting to the Lookup Table API, review our troubleshooting items here.
