@@ -17,14 +17,14 @@ The Laserfiche Lookup Table API supports the OData 4 standard, which enables it 
 
 
 ## 1. Create your Service Principal Account
-Before you start, you'll want to set up a few items in Laserfiche.  To use the Laserfiche Lookup Table API with OData compliant reporting tools, you'll need to set up an app in the Developer Console using a Service Principal account.  You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later).
+Before you start, you'll want to set up a few items in Laserfiche.  To use the Laserfiche Lookup Table API with OData compliant reporting tools, you'll need to set up an app in the Developer Console using a Service Principal account.  You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later). Review our [dedicated guide](./../../api/authentication/guide_service-principals/) on this topic for more details.
 
 ## 2. Configure Project Security
-Now that you've created or selected the Service Principal account you're going to use, you'll need to ensure that this account has access to the Lookup Tables you plan to access.  This step involves possible changes to Process Automation Project Security and you can follow the instructions in this guide on how to set that up.
+Now that you've created or selected the Service Principal account you're going to use, you'll need to ensure that this account has access to the Lookup Tables you plan to access.  This step involves possible changes to Process Automation Project Security.  You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
 
 
 ## 3. Create your App in the Developer Console
-Once you have your Service Principal Key String, you'll need to follow instructions here on creating an app in the Laserfiche Developer Console.  It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that will work with most reporting tools like PowerBI, Excel, or Tableau.
+Once you have your Service Principal Key String, you'll need to follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.  It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that will work with most reporting tools like PowerBI, Excel, or Tableau.
 
 ![](./assets/images/DevConsoleCreateApp.png){: width ="200"}
 ![](./assets/images/DevConsoleCreateKey.png){: width ="200"}
