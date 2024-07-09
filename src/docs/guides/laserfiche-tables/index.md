@@ -78,3 +78,7 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 5. You should now see the schema for your Lookup Table in the Data pane.  You can now select individual columns from your table to drag onto the PowerBI canvas and build your visualizations and reports.
 
  	![](./assets/images/PowerBIODataFeedDataPane.png){: width ="200"}
+
+
+## Troubleshooting
+If you experience issues connecting to the Lookup Table API, review our troubleshooting items here.
