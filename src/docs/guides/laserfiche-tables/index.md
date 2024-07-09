@@ -13,16 +13,17 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 The Laserfiche Lookup Table API supports the OData 4 standard, which enables it to be used with popular reporting applications like PowerBI, Tableau, and Excel.  This guide will walk you through how to connect to your Lookup Tables from PowerBI and Excel, but these instructions should generally apply to most reporting tools that support connecting to data via the OData standard. If this is your first time working with the Lookup Table API, it is recommended that you review the [table API overview](./../../api/odata-api-reference/) first.
 
+## 1. Configure a Lookup Table
+Lookup Tables are configured in `Process Automation -> Data Management -> Lookup Tables` and belong to either `Global` or a specific Process Automation Project which defines the security scope. You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
 
-## 1. Create your Service Principal Account
+{: .note }
+**Note:** The security scopes e.g. `project\Global` or `project\YourProjectName` and `table.Read` must be configured in the Service Application and included in the credentials.
+
+## 2. Create a Service Principal Account
 Before you start, you'll want to set up a few items in Laserfiche. To use the Laserfiche Lookup Table API with OData compliant reporting tools, you'll need to set up a service app in the Developer Console. You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later). Review our [dedicated guide](./../../api/authentication/guide_service-principals/) on this topic for more details.
 
 {: .note }
 **Note:** Service Principal account must have Process Automation Administrator role.
-
-
-## 2. Configure Project Security
-Now that you've created or selected the Service Principal account you're going to use, you'll need to ensure that this account has access to the Lookup Tables you plan to access. This step involves possible changes to Process Automation Project Security. You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
 
 
 ## 3. Create your App in the Laserfiche Developer Console
