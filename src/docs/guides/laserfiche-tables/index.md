@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Working with Lookup Tables
+title: Working with Reporting Applications
 nav_order: 7
 has_children: false
 parent: Guides
@@ -9,11 +9,9 @@ parent: Guides
 <!--© 2024 Laserfiche.
 See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license information.-->
 
-# Working with Lookup Tables
+# Accessing Lookup Tables from Reporting Applications
 
-See the [table API overview](./../../api/odata-api-reference/) for instructions on how to configure your application to use the table API.
-
-The Laserfiche Lookup Table API supports the OData 4 standard, which enables it to be used with popular reporting applications like PowerBI, Tableau, and Excel.  This guide will walk you through how to connect to your Lookup Tables from PowerBI and Excel, but these instructions should generally apply to most reporting tools that support connecting to data via the OData standard.
+The Laserfiche Lookup Table API supports the OData 4 standard, which enables it to be used with popular reporting applications like PowerBI, Tableau, and Excel.  This guide will walk you through how to connect to your Lookup Tables from PowerBI and Excel, but these instructions should generally apply to most reporting tools that support connecting to data via the OData standard. If this is your first time working with the Lookup Table API, it is recommended that you review the [table API overview](./../../api/odata-api-reference/) first.
 
 
 ## 1. Create your Service Principal Account
@@ -23,12 +21,14 @@ Before you start, you'll want to set up a few items in Laserfiche.  To use the L
 Now that you've created or selected the Service Principal account you're going to use, you'll need to ensure that this account has access to the Lookup Tables you plan to access.  This step involves possible changes to Process Automation Project Security.  You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
 
 
-## 3. Create your App in the Developer Console
+## 3. Create your App in the Laserfiche Developer Console
 Once you have your Service Principal Key String, you'll need to follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.  It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that will work with most reporting tools like PowerBI, Excel, or Tableau.
 
+<!--
 ![](./assets/images/DevConsoleCreateApp.png){: width ="200"}
-![](./assets/images/DevConsoleCreateKey.png){: width ="200"}
 
+![](./assets/images/DevConsoleCreateKey.png){: width ="200"}
+-->
 
 ## 4. Create an OData Connection to the Laserfiche API
 At this point, you should be ready to set up your reporting tool of choice to access your Lookup Table data. In the steps below we will configure Excel and PowerBI, but the steps should be very similar for most other OData compliant applications.
@@ -69,11 +69,11 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 	
 3. In the next window,  select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously.  In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
 
-	![](./assets/images/PowerBIODataFeedCreds.png){: width ="200"}
+	![](./assets/images/PowerBICreds.png){: width ="200"}
    
 4. In the Navigator window you should now see all the Lookup Tables that your app has access to view.  You can now select a table and click the "Load" button.  In our example, we will select the "BuildingPermits" table.
 
- 	![](./assets/images/PowerBIODataFeedCreds.png){: width ="200"}
+ 	![](./assets/images/ExcelOdataNavigator.png){: width ="200"}
  
 5. You should now see the schema for your Lookup Table in the Data pane.  You can now select individual columns from your table to drag onto the PowerBI canvas and build your visualizations and reports.
 
