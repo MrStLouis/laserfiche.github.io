@@ -30,6 +30,8 @@ Lookup Tables are configured in `Process Automation -> Data Management -> Lookup
 
 ![](./assets/images/DevConsoleCreateKey.png){: width ="200"}
 
+![](./assets/images/DevConsoleScopes.png){: width ="200"}
+
 ![](./assets/images/DevConsoleKeyandScopes.png){: width ="200"}
 
 ## 3. Create an OData Connection to the Laserfiche API
