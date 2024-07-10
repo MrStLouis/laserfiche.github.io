@@ -27,28 +27,34 @@ This guide provides a ready to use examples of Web Request rules that use Laserf
 {: .note }
 **Note:** Service Principal account must be granted the roles needed to access to the resources to be exposed via Laserfiche API.
 
-## 2. Create a Web Service Connection
+## 2. Configure a Laserfiche cloud API Web Service Connection
 
-Create a Web Service Connection by importing [Laserfiche API US Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.dsi)
+Create a Laserfiche cloud API Web Service Connection. This can be achieved by importing:
 
-![](./assets/Web%20Service%20Connections.jpg)
+- [Laserfiche API US Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.dsi)
+- [Laserfiche API Canada Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20Canada%20Cloud%20-%20Web%20Service%20Connection.dsi)
+- [Laserfiche API Europe Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20Europe%20Cloud%20-%20Web%20Service%20Connection.dsi)
+
+![Web Service Connections](./assets/Web%20Service%20Connections.jpg)
 
 {: .note }
-**Note:** Enter the long-lasting _authorizationKey_ generated for the your Service Application as the Authentication Bearer value.
+**Note:** Enter the long-lasting _authorizationKey_ generated for the your Service Application as the Authentication **Bearer** value.
 
-![](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.jpg)
+![Laserfiche API US Cloud - Web Service Connection](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.jpg)
 
-## 2. Create a Web Request Rule and configure its Web Service Connection
+## 2. Create Web Request Rules to call Laserfiche API
 
-Create a Web Service Rule(s) and configure their Web Service Connection to point to the previously created Web Service Connection for your 'Laserfiche API US Cloud' account.
-You can create Web Service Rule by importing the following definition files:
+For each API call, create a Web Service Rule and configure it to use a Laserfiche API Web Service Connection.
+For example, you can create Web Service Rules by importing the following definition files:
 
-- [Laserfiche Repository API - Entry Import - Web Request Rule.bri](./assets/Laserfiche%20Repository%20API%20-%20Entry%20Import%20-%20Web%20Request%20Rule.bri)
+- [Laserfiche Repository API - Entry - Import - Web Request Rule.bri](./assets/Laserfiche%20Repository%20API%20-%20Entry%20-%20Import%20-%20Web%20Request%20Rule.bri): Import a new document in the specified folder, and optionally assigns metadata.
 
-- TODO
+- [Laserfiche Repository API - Entry - Delete Edoc - Web Request Rule.bri](./assets/Laserfiche%20Repository%20API%20-%20Entry%20-%20Delete%20Edoc%20-%20Web%20Request%20Rule.bri): Deletes the edoc associated with an entry.
 
-![](./assets/aserfiche%20Repository%20API%20-%20Entry%20Import%20-%20Web%20Request%20Rule.jpg)
+## Test Web Request Rule
 
-## Test
+- Using Laserfiche Web Client, navigate to: **Process Automation -> Rules -> Web Request**
+- Select the rule to test
+- Click on "Test Web Request" button
 
-TODO
+![Laserfiche Repository API - Entry - Import - Web Request Rule](./assets/Laserfiche%20Repository%20API%20-%20Entry%20-%20Import%20-%20Web%20Request%20Rule.jpg)
