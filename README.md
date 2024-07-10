@@ -2,18 +2,19 @@
 
 Laserfiche developer portal: https://developer.laserfiche.com
 First published 5/23/2024
+
 ## Building documentation locally
 
 ### Prerequisites: <tag id="local_prereq">
 
 1. [Install Ruby and bundler](https://jekyllrb.com/docs/installation/)
    - See the instructions [here](https://jekyllrb.com/docs/) to install jekyll and bundler.
-      - You may need to add the zscaler.crt (rename extension to .pem) to your rubygems certificate folder, e.g.: `C:\Ruby33-x64\lib\ruby\3.3.0\rubygems\ssl_certs\rubygems.org`
-      - You may also need to paste the zscaler.crt content into `C:\Ruby33-x64\bin\etc\ssl\cert.pem`
-   - Verify installation running [https://github.com/rubygems/ruby-ssl-check/blob/master/check.rb](check.rb) 
+     - You may need to add the zscaler.crt (rename extension to .pem) to your rubygems certificate folder, e.g.: `C:\Ruby33-x64\lib\ruby\3.3.0\rubygems\ssl_certs\rubygems.org`
+     - You may also need to paste the zscaler.crt content into `C:\Ruby33-x64\bin\etc\ssl\cert.pem`
+   - Verify installation running [check.rb](https://github.com/rubygems/ruby-ssl-check/blob/master/check.rb)
    - run `gem install bundler`
    - run `gem install jekyll`
-      - If fails to download a package, you may need to manually download and install it. E.g. `gem install ffi -v 1.17.0`
+     - If fails to download a package, you may need to manually download and install it. E.g. `gem install ffi -v 1.17.0`
 1. navigate to the src directory
 1. remove the Gemfile.lock, if it exists
 1. run `bundle install`

@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Self-Hosted Server
+title: Self-Hosted API Server
 nav_order: 4
 redirect_from:
   - api/server/index.html
-parent: API
+parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

@@ -4,7 +4,7 @@ title: Libraries
 nav_order: 2
 redirect_from:
   - libraries.html
-parent: API
+parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

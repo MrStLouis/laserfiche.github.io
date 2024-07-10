@@ -6,7 +6,7 @@ redirect_from:
   - guides/guide_oauth-service.html
   - guide_oauth-service.html
 parent: Authentication
-grand_parent: API
+grand_parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.
@@ -59,6 +59,11 @@ Create an OAuth Service App when you want to write a service application that ma
        **Note:** The credentials will be invalidated when the service principal key expires or is rotated. New credentials will need to be created using a valid service principal key.
 
      - To create a **username** and **password** you must specify requested scopes. This is required since you do not have the additional step of specifying scopes when requesting an access token using this option. These should fall within the allowed scopes of your application, the scopes your application will have access to will be the intersection of the allowed and requested scopes.
+         - For the OData Table API it is important that you specify project scopes as well as table read/write scopes. For example:
+             - For read access to global resources: "table.Read project/Global"
+             - For read/write access to global resources: "table.Read table.Write project/Global"
+             - For read/write access to a project named "Example Project": "table.Read table.Write project/Example+Project"
+         - See [OAuth 2.0 Scopes for Laserfiche APIs](../guide_oauth_2.0_scopes/) for more details.
      - Once generated, you can skip the next step for the OAuth credentials flow and go directly to the [Use the credentials to access Laserfiche APIs](#use-the-credentials-to-access-laserfiche-apis) section.
 
 1. When generating an access key, please **copy** or **download** the key as it will only be shown once. Each service app can have a maximum of 2 access keys.
