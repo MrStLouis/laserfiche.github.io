@@ -1,12 +1,24 @@
 # developer.laserfiche.com
 
 Laserfiche developer portal: https://developer.laserfiche.com
-
+First published 5/23/2024
 ## Building documentation locally
 
 ### Prerequisites: <tag id="local_prereq">
 
-- Follow the instructions [here](https://jekyllrb.com/docs/) to install jekyll and bundler.
+1. [Install Ruby and bundler](https://jekyllrb.com/docs/installation/)
+   - See the instructions [here](https://jekyllrb.com/docs/) to install jekyll and bundler.
+      - You may need to add the zscaler.crt (rename extension to .pem) to your rubygems certificate folder, e.g.: `C:\Ruby33-x64\lib\ruby\3.3.0\rubygems\ssl_certs\rubygems.org`
+      - You may also need to paste the zscaler.crt content into `C:\Ruby33-x64\bin\etc\ssl\cert.pem`
+   - Verify installation running [https://github.com/rubygems/ruby-ssl-check/blob/master/check.rb](check.rb) 
+   - run `gem install bundler`
+   - run `gem install jekyll`
+      - If fails to download a package, you may need to manually download and install it. E.g. `gem install ffi -v 1.17.0`
+1. navigate to the src directory
+1. remove the Gemfile.lock, if it exists
+1. run `bundle install`
+1. run `bundle exec jekyll serve`
+
 - Check installations and versions:
 
   ```sh
@@ -14,22 +26,6 @@ Laserfiche developer portal: https://developer.laserfiche.com
   bundle --version
   jekyll --version
   ```
-
-- Troubleshoot:
-
-  - If `gem install jekyll bundle` fails due to missing certificate e.g. `ERROR:  SSL verification error at depth 2: unable to get local issuer certificate (20)
-ERROR:  You must add /C=US/ST=California/L=San Jose/O=Zscaler Inc./OU=Zscaler Inc./CN=Zscaler Root CA/emailAddress=support@zscaler.com to your local trusted store` follow these steps:
-    1. Get the missing certificate e.g. `zscaler.crt` or `zscaler.pem`
-    1 Add the certificate to Ruby cert store file e.g. `C:/Ruby32-x64/bin/etc/ssl/cert.pem`. Actual location can be discovered using `ruby -ropenssl -e 'p OpenSSL::X509::DEFAULT_CERT_FILE'` 
-    1. You may also need to add the certificate to rubygems `ssl_certs` folder e.g. `C:\Ruby32-x64\lib\ruby\3.2.0\rubygems\ssl_certs\rubygems.org`
-    1. Run `gem update --system`
-
-    - More details [here](https://bundler.io/guides/rubygems_tls_ssl_troubleshooting_guide.html#updating-ca-certificates).
-
-  - Dependency issues:
-    1.  <tag id="fetch_error">Install the dependencies from local .gem files if you see errors like`'fetch_http': bad response Forbidden 403 (https://index.rubygems.org/gems/google-protobuf-3.25.3-x64-mingw-ucrt.gem?_sm_nck=1)` when run `gem install jekyll`.
-        1. Find the dependency needed in your local drive or go to https://index.rubygems.org/gems and download the package file.
-        1. Run `gem install --local <path_to_gem/filename.gem>`.
 
 ### Build the static website and serve locally
 
