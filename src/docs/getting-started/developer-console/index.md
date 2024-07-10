@@ -15,7 +15,7 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 {: .note }
 **Note:** The following guide only applies to Laserfiche Cloud.
 
-The Developer Console can be used to manage the OAuth applications in your Laserfiche account.
+The Developer Console can be used to manage the OAuth applications in your Laserfiche account. An application must be registered in the developer console in order to use the API.
 
 ## Access Developer Console
 
