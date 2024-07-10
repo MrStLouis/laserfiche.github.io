@@ -51,11 +51,11 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 
 1. In the Odata Feed window, enter the appropriate URL (see below) for your Laserfiche Cloud environment and click "OK".
 
-- US Cloud Customers: <https://api.laserfiche.com/odata4/table/>
-- CA Cloud Customers: <https://api.laserfiche.ca/odata4/table/>
-- EU Cloud Customers: <https://api.eu.laserfiche.com/odata4/table/>
+   - US Cloud Customers: <https://api.laserfiche.com/odata4/table/>
+   - CA Cloud Customers: <https://api.laserfiche.ca/odata4/table/>
+   - EU Cloud Customers: <https://api.eu.laserfiche.com/odata4/table/>
 
-  ![Input OData URL in Excel](./assets/images/ExcelOdataFeedURL.png){: width="600"}
+   ![Input OData URL in Excel](./assets/images/ExcelOdataFeedURL.png){: width="600"}
 
 1. In the next window, select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously. In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
 
@@ -71,42 +71,42 @@ At this point, you should be ready to set up your reporting tool of choice to ac
 
 1. In PowerBI Desktop, select "Get data" from the "Home" tab in the Office Ribbon, then select the "OData Feed" option.
 
-![PowerBI OData Feed](./assets/images/PowerBIOData.png){: width="500"}
+   ![PowerBI OData Feed](./assets/images/PowerBIOData.png){: width="500"}
 
 1. In the Odata Feed window, enter the appropriate URL (see below) for your Laserfiche Cloud environment and click "OK".
 
-- US Cloud Customers: <https://api.laserfiche.com/odata4/table/>
-- CA Cloud Customers: <https://api.laserfiche.ca/odata4/table/>
-- EU Cloud Customers: <https://api.eu.laserfiche.com/odata4/table/>
+   - US Cloud Customers: <https://api.laserfiche.com/odata4/table/>
+   - CA Cloud Customers: <https://api.laserfiche.ca/odata4/table/>
+   - EU Cloud Customers: <https://api.eu.laserfiche.com/odata4/table/>
 
-![Input OData URL in PowerBI](./assets/images/PowerBIODataFeedURL.png){: width="700"}
+   ![Input OData URL in PowerBI](./assets/images/PowerBIODataFeedURL.png){: width="700"}
 
 1. In the next window, select "Basic" from the side navigation options, then enter the Username and Password you created in the Developer Console previously. In the "Select which level to apply these settings to" drop down, you can select the URL that most closely matches the URLs in step 2 above.
 
-![Input OData credentials in PowerBI](./assets/images/PowerBICreds.png){: width="700"}
+   ![Input OData credentials in PowerBI](./assets/images/PowerBICreds.png){: width="700"}
 
 1. In the Navigator window you should now see all the Lookup Tables that your app has access to view. You can now select a table and click the "Load" button. In our example, we will select the "BuildingPermits" table.
 
-![Navigate OData feed](./assets/images/ExcelOdataNavigator.png){: width="700"}
+   ![Navigate OData feed](./assets/images/ExcelOdataNavigator.png){: width="700"}
 
 1. You should now see the schema for your Lookup Table in the Data pane. You can now select individual columns from your table to drag onto the PowerBI canvas and build your visualizations and reports.
 
-![View OData feed data](./assets/images/PowerBIODataFeedDataPane.png){: width="500"}
+   ![View OData feed data](./assets/images/PowerBIODataFeedDataPane.png){: width="500"}
 
 ### Tableau
 
 1. From the Tableau "Connect" screen, under the "To a Server" heading, select "More...", then "OData".
 
-![Tableau OData menu](./assets/images/TableauOdataMenu.png){: width="600"}
+   ![Tableau OData menu](./assets/images/TableauOdataMenu.png){: width="600"}
 
 1. In the Odata window, enter the appropriate URL (see below) for your Laserfiche Cloud environment. Then select the "Basic" authentication option and enter the Username and Password you created in the Developer Console.
 
-- US Cloud Customers: <https://api.laserfiche.com/odata4/table/>
-- CA Cloud Customers: <https://api.laserfiche.ca/odata4/table/>
-- EU Cloud Customers: <https://api.eu.laserfiche.com/odata4/table/>
+   - US Cloud Customers: <https://api.laserfiche.com/odata4/table/>
+   - CA Cloud Customers: <https://api.laserfiche.ca/odata4/table/>
+   - EU Cloud Customers: <https://api.eu.laserfiche.com/odata4/table/>
 
-  ![Enter OData credentials in Tableau](./assets/images/TableauCreds.png){: width="500"}
+   ![Enter OData credentials in Tableau](./assets/images/TableauCreds.png){: width="500"}
 
 1. You should now see the schema for your Lookup Table in the main Tableau canvas. You can now select individual columns from your table to drag onto the canvas and build your visualizations and reports.
 
-![View OData schema in Tableau](./assets/images/TableauSchema.png){: width="800"}
+   ![View OData schema in Tableau](./assets/images/TableauSchema.png){: width="800"}
