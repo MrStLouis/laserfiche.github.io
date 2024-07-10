@@ -21,7 +21,10 @@ Lookup Tables are configured in `Process Automation -> Data Management -> Lookup
 
 ## 2. Create your App in the Laserfiche Developer Console
 - You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later). Review our [dedicated guide](./../../api/authentication/guide_service-principals/) on this topic for more details.
-- -  Create a Service Application to represent the integration with your reporting tools. Follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.  It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that is supported by  most reporting tools like PowerBI, Excel, or Tableau.
+-  Create a Service Application to represent the integration with your reporting tools. Follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.
+
+{: .note }
+**Note:** It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that is supported by  most reporting tools like PowerBI, Excel, or Tableau.
 
 {: .note }
 **Note:** Service Principal account must have Process Automation Administrator role.
