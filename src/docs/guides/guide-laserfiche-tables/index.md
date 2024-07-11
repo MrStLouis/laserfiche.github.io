@@ -18,7 +18,7 @@ The Laserfiche Lookup Table API supports the OData 4 standard, which enables it 
 Lookup Tables are configured in `Process Automation -> Data Management -> Lookup Tables` and belong to either `Global` or a specific Process Automation Project which defines the security scope. You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
 
 {: .note }
-**Note:** The security scopes e.g. `project/Global` or `project/YourProjectName` and `table.Read` must be configured in the Service Application and included in the credentials.
+**Note:** The security scopes e.g. `project/Global` or `project/YourProjectName` and `table.Read` must be configured in the Service App and included in the credentials.
 
 ## 2. Obtain a Service Principal Account and Key
 
