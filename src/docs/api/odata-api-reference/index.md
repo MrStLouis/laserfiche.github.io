@@ -30,7 +30,7 @@ The Table API is secured using project-based security. This will match the alrea
 
 In order to authenticate, follow the steps for [Authenticating to the Laserfiche API](./../authentication/guide_authenticate-to-the-laserfiche-api/). The important part for the table API is the scopes. You must configure table and project scopes in the developer console and ensure you are requesting the correct scopes when requesting an access token.
 
-**Security is a the intersection of:**
+**Security is the intersection of:**
 
 1. The scope parameter in the access token
    - This scope is the intersection of the scopes that are configured in developer console, the scopes that were requested when obtaining an access token, and the projects that the signed-in user has access to.
