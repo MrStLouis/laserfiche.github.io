@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Laserfiche API from Web Request Rules
+title: Using the Laserfiche API from Workflows and Business Processes
 nav_order: 7
 has_children: false
 parent: Guides
@@ -13,7 +13,7 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 Laserfiche process automation [Web Request Rules](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Rules/web-request-rule.htm?TocPath=Process%2520Automation%257CRules%257C_____10) can be used to enable Workflows and Business Processes to interact with HTTP based API, also known as RESTful API.
 
-This guide provides ready to use examples of Web Request rules that use Laserfiche [Repository API](../../api/guide_overview-of-the-laserfiche-api/) to interact with documents in a Laserfiche cloud Repository.
+This guide provides ready to use examples of Web Request rules that use [Laserfiche API](../../api/guide_overview-of-the-laserfiche-api/) to interact with documents in a Laserfiche cloud Repository.
 
 
 ## 1. Create a Service Application in the Laserfiche Developer Console
@@ -26,7 +26,7 @@ This guide provides ready to use examples of Web Request rules that use Laserfic
 - Create a Service App in the Laserfiche Developer Console to represent the integration with Laserfiche Cloud API. Follow instructions [here](./../../api/authentication/guide_oauth-service/). You must select the **long-lasting Authorization Key** option when creating the Authorization Key.
 
 {: .note }
-**Note:** TODO Scopes
+**Note:** The security scopes required by the Web Request Rules, for example `repository.Read repository.Write project/Global table.Read` must be configured in the Service App and included in the credentials. For more information see [OAuth 2.0 Scopes for Laserfiche APIs](../../api/authentication/guide_oauth_2.0_scopes/).
 
 ## 2. Configure a Web Service Connection to Connect to Laserfiche Cloud API
 
@@ -38,8 +38,7 @@ Create a Laserfiche Cloud API Web Service Connection. This can be achieved by im
 
 ![Web Service Connections](./assets/Web%20Service%20Connections.jpg)
 
-{: .note }
-**Note:** Enter the long-lasting _authorizationKey_ generated for your Service App as the Authentication **Bearer** value.
+- In the Web Service Connection - Authentication step: replace the Bearer value placeholder text `<Enter your Service Application long-lasting authorizationKey from Developer Console>` with the long-lasting ***authorizationKey*** generated for your Service App.
 
 ![Laserfiche API US Cloud - Web Service Connection](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.jpg)
 
