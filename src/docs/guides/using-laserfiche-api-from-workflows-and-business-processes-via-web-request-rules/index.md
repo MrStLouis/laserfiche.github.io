@@ -30,17 +30,17 @@ This guide provides ready to use examples of Web Request rules that use [Laserfi
 
 ## 2. Configure a Web Service Connection to Connect to Laserfiche Cloud API
 
-Create a Laserfiche Cloud API Web Service Connection. This can be achieved by importing:
+1. Create a Laserfiche Cloud API Web Service Connection. This can be achieved by importing:
 
-- [Laserfiche API US Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.dsi)
-- [Laserfiche API Canada Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20Canada%20Cloud%20-%20Web%20Service%20Connection.dsi)
-- [Laserfiche API Europe Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20Europe%20Cloud%20-%20Web%20Service%20Connection.dsi)
+    - [Laserfiche API US Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.dsi)
+    - [Laserfiche API Canada Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20Canada%20Cloud%20-%20Web%20Service%20Connection.dsi)
+    - [Laserfiche API Europe Cloud - Web Service Connection.dsi](./assets/Laserfiche%20API%20Europe%20Cloud%20-%20Web%20Service%20Connection.dsi)
 
-![Web Service Connections](./assets/Web%20Service%20Connections.jpg)
+    ![Web Service Connections](./assets/Web%20Service%20Connections.jpg)
 
-- In the Web Service Connection - Authentication step: replace the Bearer value placeholder text `<Enter your Service Application long-lasting authorizationKey from Developer Console>` with the long-lasting ***authorizationKey*** generated for your Service App.
+1. In the Web Service Connection - Authentication step: replace the Bearer value placeholder text `<Enter your Service Application long-lasting authorizationKey from Developer Console>` with the long-lasting ***authorizationKey*** generated for your Service App.
 
-![Laserfiche API US Cloud - Web Service Connection](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.jpg)
+    ![Laserfiche API US Cloud - Web Service Connection](./assets/Laserfiche%20API%20US%20Cloud%20-%20Web%20Service%20Connection.jpg)
 
 ## 3. Create Web Request Rules to call Laserfiche API
 
