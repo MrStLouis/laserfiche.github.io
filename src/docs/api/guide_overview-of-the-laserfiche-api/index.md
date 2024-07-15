@@ -126,7 +126,7 @@ In some cases, a response body can return a large amount of data that would be i
 
 ### Next Steps
 
-- Learn how to [get a user access token](../../api/authentication/guide_authenticate-to-the-laserfiche-api/).
+- Learn how to [get a user access token](../../api/authentication/).
 - Learn how to [import a document into your repository](../../guides/documents-and-folders/guide_importing-documents/).
 - Learn how to [create folders in your repository](../../guides/documents-and-folders/guide_creating-folders/).
 - Learn how to [assign values to Laserfiche fields](../../guides/metadata/guide_write-field-values/).
