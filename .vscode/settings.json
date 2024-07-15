@@ -13,5 +13,12 @@
   "[markdown]": {
     "powerHeader.commentMode": "block"
   },
-  "powerHeader.autoInsert.languages": ["plaintext", "Log", "json"]
+  "powerHeader.autoInsert.languages": [
+    "plaintext",
+    "Log",
+    "json"
+  ],
+  "cSpell.words": [
+    "Laserfiche"
+  ]
 }

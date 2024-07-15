@@ -6,7 +6,7 @@ redirect_from:
   - guides/guide_authenticating-to-the-swagger-playground.html
   - guide_authenticating-to-the-swagger-playground.html
 parent: Authentication
-grand_parent: API
+grand_parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.
@@ -50,6 +50,8 @@ For Self-Hosted Laserfiche systems, learn how to [use the Swagger UI Sandbox](..
     ![](./assets/images/api-swagger-oauth-web-app-01.png)
 1. On the Swagger UI Sandbox, scroll to the top of the page, (switch to the **v1** or later definition for Repository API), and click **Authorize** to display the following dialog box. ![](./assets/images/api-swagger-oauth-web-app-02.png)
 1. In the dialog box, find the **OAuth2 Authorization Code Flow** Authorization option. Within **client_id**, enter the Client ID found on the Developer Console App Configuration page. For Web Apps, also enter the Client Secret within the **client_secret** section of the dialog box. For Single-Page Apps, the client secret should be blank.
+1. Specify the scopes that you require. See [OAuth 2.0 Scopes for more details](./../guide_oauth_2.0_scopes/).
+    - Note: For the table API you can only select access to global resources or a test project named "Swagger Test Project". This is only intended for testing purposes, if you need to test other scopes, use a service app or your own web app or SPA.
 1. Click **Authorize**.
 1. This will start the Authorization Code Flow and will open a new tab. You will need to sign in to Laserfiche Cloud using the same Account ID as the one used to register your app. If you are already signed in to another Laserfiche Cloud service, the browser should already have the associated Laserfiche Cloud cookies and the process will skip the sign-in step and will show the consent page in the next step directly.
 1. The consent page will be shown to decide whether to grant the app access to your credentials. Click **Confirm**.

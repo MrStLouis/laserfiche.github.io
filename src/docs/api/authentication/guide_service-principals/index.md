@@ -6,7 +6,7 @@ redirect_from:
   - guides/guide_service-principals.html
   - guide_service-principals.html
 parent: Authentication
-grand_parent: API
+grand_parent: Laserfiche APIs
 ---
 
 <!--© 2024 Laserfiche.

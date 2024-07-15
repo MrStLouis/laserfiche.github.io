@@ -1,6 +1,6 @@
 ---
 layout: default
-title: API
+title: Laserfiche APIs
 nav_order: 4
 redirect_from:
   - guides/guide_overview-of-the-laserfiche-api.html
@@ -55,7 +55,7 @@ API sets are used to help organize the Laserfiche API and often correspond to di
 Currently the Laserfiche API supports two API sets:
 
 - The `repository` API set allows you to interact with the Laserfiche Cloud repository.
-- The `table` API set (Preview) allows you to interact with Laserfiche lookup tables using OData protocol version 4.
+- The `table` API set allows you to interact with Laserfiche lookup tables using OData protocol version 4.
 
 ### Version
 
@@ -66,7 +66,7 @@ Every API for a service has an API version. The version component is of the form
 
 The API versions of each service are independent of each other, and so a single client may be invoking v1 of the API for the account service, but the v2 and v3 API for the repository service, for example. A service does not necessarily have a stable API version. The interpretation of "alpha" and "beta" in the API shall follow the rules listed above and is separate from non-technical marketing language concerning related features or releases.
 
-There is currently only one version of the Table API (Preview) and a version is not currently specified in the request.
+There is currently only one version of the Table API and a version is not currently specified in the request.
 
 **Stable API Versions**
 
@@ -95,7 +95,7 @@ Repository API: `GET https://api.laserfiche.com/repository/v1/Repositories/r-abc
 
 After the `v1` version, the resource can be interpreted as "in the repository resource with id r-abc123, the entry resource with id 888."
 
-For the Table API (Preview), the resources are user-defined. For example:
+For the Table API, the resources are user-defined. For example:
 
 Table API: `GET https://api.laserfiche.com/odata4/table/MyTable('{1}')`
 
