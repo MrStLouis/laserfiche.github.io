@@ -18,28 +18,44 @@ The Laserfiche Lookup Table API supports the OData 4 standard, which enables it 
 Lookup Tables are configured in `Process Automation -> Data Management -> Lookup Tables` and belong to either `Global` or a specific Process Automation Project which defines the security scope. You can read more about Projects in Process Automation [here](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Teams/projects.htm?TocPath=Process%2520Automation%257CTeams%257CProjects%257C_____0).
 
 {: .note }
-**Note:** The security scopes e.g. `project/Global` or `project/YourProjectName` and `table.Read` must be configured in the Service Application and included in the credentials.
+**Note:** The security scopes e.g. `project/Global` or `project/YourProjectName` and `table.Read` must be configured in the Service App and included in the credentials.
 
-## 2. Create your App in the Laserfiche Developer Console
+## 2. Obtain a Service Principal Account and Key
 
-- You'll need to select an existing Service Principal account, or create a new one, and then generate a Service Principal Key (record the key string, you'll need it later). Review our [dedicated guide](./../../api/authentication/guide_service-principals/) on this topic for more details.
-- Create a Service Application to represent the integration with your reporting tools. Follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console.
+- Select an existing Service Principal account or create a new one. The service principal must have the Process Automation Administrator role in order to access global resources. See the [Table API security overview](./../../api/odata-api-reference/#security) for details on what roles the service principal must have if using resources within a project instead of global resources.
+- In Account Administration, generate a Service Principal key for the account (record the key string, you'll need it later).
+
+{: .note }
+**Note:** The service principal must have Process Automation Administrator role in order to access global resources.
+
+## 3. Create your App in the Laserfiche Developer Console
+
+- Create a Service App and credentials to represent the integration with your reporting tools.
+  - Follow instructions [here](./../../api/authentication/guide_oauth-service/) on creating a Service App in the Laserfiche Developer Console and generating an access key. Use the service principal and service principal key that you generated in the previous step when generating your credentials.
+  - Determine what process automation scopes you will need by reviewing the [Table API security overview](./../../api/odata-api-reference/#security). These scopes will need to be configured in developer console and used when generating your username/password.
 
 {: .note }
 **Note:** It is important to follow the instructions for the Username/Password authentication method, as that is the only authentication method that is supported by most reporting tools like PowerBI, Excel, or Tableau.
 
-{: .note }
-**Note:** Service Principal account must have Process Automation Administrator role.
+**The following screenshots show how to generate a username/password to access global resources:**
 
-![Create developer console application](./assets/images/DevConsoleCreateApp.png){: width="500" }
+   1. Create Service App in Developer Console
 
-![Create key in developer console](./assets/images/DevConsoleCreateKey.png){: width="500"}
+      ![Create developer console application](./assets/images/DevConsoleCreateApp.png){: width="500" }
 
-![Set scopes in developer consoel](./assets/images/DevConsoleScopes.png){: width="800"}
+   1. Configure OAuth Scopes for Service App in the Authentication tab
 
-![Generate username and password](./assets/images/DevConsoleKeyandScopes.png){: width="600"}
+      ![Set scopes in developer console](./assets/images/DevConsoleScopes.png){: width="800"}
 
-## 3. Create an OData Connection to the Laserfiche API
+   1. Create Access Key for Service App: Select username/password
+
+      ![Create key in developer console](./assets/images/DevConsoleCreateKey.png){: width="500"}
+
+   1. Input Service Principal Key and scopes to generate credentials
+
+      ![Generate username and password](./assets/images/DevConsoleKeyandScopes.png){: width="600"}
+
+## 4. Create an OData Connection to the Laserfiche API
 
 At this point, you should be ready to set up your reporting tool of choice to access your Lookup Table data. In the steps below we will configure Excel and PowerBI, but the steps should be very similar for most other OData compliant applications.
 

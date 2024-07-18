@@ -12,7 +12,7 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 ## Overview
 
-The Lookup Table OData API allows users to interact with data stored in their lookup tables. It follows the [OData version 4 standard](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html) which allows you to use that standard to access and perform CRUD on your Laserfiche Lookup Tables from any application. Major use cases include reporting in Power BI or Excel. For more information on how to use an OData API [see the OData documentation](https://www.odata.org/getting-started/basic-tutorial/). You can explore the API using the [Swagger playground](./../../api/playground/). Lookup tables are secured using project-based security.
+The Lookup Table OData API allows users to interact with data stored in lookup tables in Laserfiche Cloud. It follows the [OData version 4 standard](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html) which allows you to use that standard to access and perform CRUD on your Laserfiche Lookup Tables from any application. Major use cases include reporting in Power BI or Excel. For more information on how to use an OData API [see the OData documentation](https://www.odata.org/getting-started/basic-tutorial/). You can explore the API using the [Swagger playground](./../../api/playground/). Lookup tables are secured using project-based security.
 
 ## Try it out
 
@@ -30,7 +30,7 @@ The Table API is secured using project-based security. This will match the alrea
 
 In order to authenticate, follow the steps for [Authenticating to the Laserfiche API](./../authentication/guide_authenticate-to-the-laserfiche-api/). The important part for the table API is the scopes. You must configure table and project scopes in the developer console and ensure you are requesting the correct scopes when requesting an access token.
 
-**Security is a the intersection of:**
+**Security is the intersection of:**
 
 1. The scope parameter in the access token
    - This scope is the intersection of the scopes that are configured in developer console, the scopes that were requested when obtaining an access token, and the projects that the signed-in user has access to.

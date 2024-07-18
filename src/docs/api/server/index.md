@@ -38,11 +38,11 @@ The self-hosted Laserfiche API Server can be installed to connect with your self
 
 ### Installation configuration
 
-1. In IIS Manager, **configure** HTTPS bindings (required) for the website containing "LFRepositoryAPI" web application.
+1. In IIS Manager, **configure** HTTPS bindings (required) for the website containing the "LFRepositoryAPI" web application.
 1. Navigate to the directory `%ProgramData%\Laserfiche\API Server\LFRepositoryAPI` and **open** `appsettings.json` using a text editor as an administrator.
 1. In `appsettings.json`, set the value of **"LaserficheServerName"** to the fully qualified domain name of your Laserfiche Server in your network. If your Laserfiche Server is using a non-default port, append the port to the fully qualified domain name (e.g., "myLaserficheServer.myOrganization.com:123").
 1. Optional configuration settings
-   - (Optional) In `appsettings.json`, set the value of **"EnableLaserficheServerSSL"** to false if the connection to the Laserfiche server is **NOT** secured using TLS/SSL.
+   - (Optional) In `appsettings.json`, set the value of **"EnableLaserficheServerSSL"** to false if the connection to the Laserfiche Server is **NOT** secured using TLS/SSL.
    - (Optional) In `appsettings.json`, set the value of **"EnableGetRepositoryListApi"** to true if you would like to enable the GET /Repositories API that returns the list of repositories. **Note that using this API does not require an access token.**
    - (Optional) In `appsettings.json`, set the value of **"KeyedConcurrentLicense"** to your "Keyed Concurrent License".
    - (Optional) In `appsettings.json`, set the value of **"LaserficheWebClientHostUrl"** to your "Laserfiche Web Client Host URL" (e.g., "https://_{LaserficheWebClientHostName}_/laserfiche").
