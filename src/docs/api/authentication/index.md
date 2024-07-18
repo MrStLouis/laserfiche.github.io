@@ -19,11 +19,9 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 Generate OAuth credentials to begin using the Laserfiche API. Subsequent requests can use the access token received in the response from the initial connection creation request.
 
-{: .note }
-  Note: Access Tokens used to access APIs are secrets and should be stored securely. To prevent CSRF attacks, it's NOT recommended to store secrets or sensitive information in cookies. The most secure way to store these tokens is server-side. If you are using an SPA that does not have a server-side component, it is recommended to keep the token in memory. If you need to store the token client-side you can store the token in browser local storage, while being conscious of XXS attacks. Beware that storing a cookie in local storage is accessible by any application in the document's origin. You can also mitigate CSRF attacks by adding a same-site cookie.\
-        *Local storage example:*\
-        `const token = getTokenFromOAuthService();`\
-        `window.localStorage.setItem("token", token);`
+{: class="note" }
+  Note: Access Tokens used to access APIs are secrets and should be stored securely. To prevent CSRF attacks, it's NOT recommended to store secrets or sensitive information in cookies.\
+  Access Tokens stored client side can be vulnerable to CSRF and XSS attacks. Security is a shared concern and best practices should be used to minimize risks. Best practices for your application will depend on your implementation and architecture. Click [here](https://owasp.org/www-community/attacks/csrf) for more details.
 
 For Laserfiche Cloud, version 1 and later of the APIs follow the OAuth model.
 
