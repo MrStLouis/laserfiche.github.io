@@ -69,7 +69,7 @@ Create an OAuth Service App when you want to write a service application that ma
 1. When generating an access key, please **copy** or **download** the key as it will only be shown once. Each service app can have a maximum of 2 access keys.
 
    {: .note }
-   **Note:** Access keys should be securely stored server-side.
+   **Note:** Access keys should be securely stored.
 
 ## OAuth Client Credentials Grant Flow
 
