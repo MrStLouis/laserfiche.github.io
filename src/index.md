@@ -20,7 +20,7 @@ Get started with the Laserfiche API basics, including how to use it and how it w
 
 ## Authenticating to the Laserfiche API
 
-Learn how to create a secure connection to Laserfiche Cloud and authenticate each API request. [Learn More](./docs/api/authentication/guide_authenticate-to-the-laserfiche-api)
+Learn how to create a secure connection to Laserfiche Cloud and authenticate each API request. [Learn More](./docs/api/authentication/)
 
 ## Authenticating to the Swagger Playground
 

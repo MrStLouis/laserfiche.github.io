@@ -25,10 +25,10 @@ Generate OAuth credentials to begin using the Laserfiche API. Subsequent request
 
 For Laserfiche Cloud, version 1 and later of the APIs follow the OAuth model.
 
-- Learn how to [create a connection for your OAuth Service App](../guide_oauth-service/).
-- Learn how to [create a connection for your OAuth Single-Page App](../guide_oauth-spa/).
-- Learn how to [create a connection for your OAuth Web App](../guide_oauth-webapp/).
+- Learn how to [create a connection for your OAuth Service App](./guide_oauth-service/).
+- Learn how to [create a connection for your OAuth Single-Page App](./guide_oauth-spa/).
+- Learn how to [create a connection for your OAuth Web App](./guide_oauth-webapp/).
 
 ## Creating a connection in self-hosted systems
 
-- Learn how to [create a connection using the password flow](../../server/#authenticating-with-the-self-hosted-laserfiche-api).
+- Learn how to [create a connection using the password flow](../server/#authenticating-with-the-self-hosted-laserfiche-api).
