@@ -11,7 +11,9 @@ See LICENSE-DOCUMENTATION and LICENSE-CODE in the project root for license infor
 
 # Using the Laserfiche API from Workflows and Business Processes via Web Request Rules in a Laserfiche Cloud Account
 
-Laserfiche process automation [Web Request Rules](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Rules/web-request-rule.htm?TocPath=Process%2520Automation%257CRules%257C_____10) can be used to enable Workflows and Business Processes to interact with HTTP based API, also known as RESTful API.
+Laserfiche process automation [Web Request Rules](https://doc.laserfiche.com/laserfiche.documentation/en-us/Default.htm#../Subsystems/ProcessAutomation/Content/Resources/Rules/web-request-rule.htm?TocPath=Process%2520Automation%257CRules%257C_____10) can be used to enable Workflows and Business Processes to interact with HTTP based API, also known as RESTful API. 
+
+Web Request rules operate under a known user context, a service principal in this case. If you want to use the Laserfiche API to operate on behalf of the logged on user please see [Using the Laserfiche API from Forms JS](../laserfiche-api-in-forms-js/).
 
 This guide provides ready to use examples of Web Request rules that use [Laserfiche API](../../api/guide_overview-of-the-laserfiche-api/) to interact with documents in a Laserfiche cloud Repository.
 
