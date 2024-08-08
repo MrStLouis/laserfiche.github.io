@@ -236,12 +236,12 @@ const main = async () => {
   const repositoryId = 'r-MY_REPO_ID_HERE';
 
   const mappedFields = await mapEntryToForm({
-  repositoryId, // From variable above
-  entryIdField: "123456", // Can be a field, a string, or a number
-  apiClient, // From variable above
-  options: { makeFieldsDisabled: [{ fieldId: 2 }] }
-});
-console.log(mappedFields);
+    repositoryId, // From variable above
+    entryIdField: "123456", // Can be a field, a string, or a number
+    apiClient, // From variable above
+    options: { makeFieldsDisabled: [{ fieldId: 2 }] }
+  });
+  console.log(mappedFields);
 };
 void main();
 ```
